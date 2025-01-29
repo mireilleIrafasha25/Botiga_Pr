@@ -1,0 +1,58 @@
+/* Home Page */
+.home {
+    /* text-align: center; */
+    padding: 20px;
+    background-color: white;
+}
+
+.home-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    margin-left: 0px;
+}
+
+/* Category Cards */
+.card-container {
+    display: flex;
+    justify-content: space-between; /* Distributes cards evenly */
+    /* align-items: center; */
+    gap: 20px;
+    overflow-x: auto; /* Allows scrolling if needed */
+    padding: 10px;
+    white-space: nowrap; /* Prevents cards from wrapping */
+    width: 100%;
+    flex-wrap: nowrap; /* Ensures all cards stay on one line */
+}
+
+.card {
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 180px; /* Set fixed width for consistency */
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    padding: 10px;
+    flex-shrink: 0; /* Prevents shrinking when screen is small */
+}
+
+ .card:hover {
+    transform: scale(1.05);
+} 
+
+.card a {
+    display: block;
+    text-decoration: none;
+}
+
+.card-image {
+    width: 100%;
+    height: 120px;
+    object-fit: contain; /* Ensures the full image is shown */
+    border-radius: 8px;
+    transition: opacity 0.3s ease-in-out;
+    background-color: white; /* Prevents blank areas */
+}
+
+ .card-image:hover {
+    opacity: 0.8;
+} 
