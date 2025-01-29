@@ -1,0 +1,43 @@
+.Whole-Navup{
+    display: flex;
+    gap:200px;
+}
+.search-and-category{
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+}
+.category{
+    display: flex;           /* Equivalent to flex */
+    align-items: center;      /* Equivalent to items-center */
+    border: 2px solid #D1D5DB; /* Equivalent to border-2 border-gray-300 */
+    border-radius: 0.5rem;    /* Equivalent to rounded-lg (8px) */
+    padding: 0.5rem;          /* Equivalent to p-2 (8px) */
+    width: 10rem;
+    height: 16px;
+    
+}
+.category form {
+   margin-right: 20px;
+   border: none;
+    outline: none;
+    border-radius: 0.5rem; 
+    padding: 0.5rem;  
+    height: 50px;
+    align-items: center; 
+}
+.category form select{
+    border: 1px solid white;
+    margin-top: 18px;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Adjust the space between icons */
+  }
+  
+  .icon {
+    color: #333; /* You can change the color */
+    cursor: pointer;
+  }

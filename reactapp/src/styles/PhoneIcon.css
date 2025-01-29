@@ -1,0 +1,20 @@
+.phone-icon-container {
+    display: flex;
+    gap:5px;
+    padding: 10px;
+    margin-top: 8px;
+  }
+  .phone-icon-container .phone-number{
+color:white;
+  }
+  .phone-icon {
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+  
+  .phone-icon:hover {
+    color: #ffeb3b; /* Change color on hover */
+  }
+  

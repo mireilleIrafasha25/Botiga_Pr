@@ -1,0 +1,29 @@
+.Whole{
+    display: flex;
+    background-color: blue;
+    gap:200px
+}
+.Trending_Categories select{
+  border: 1px solid blue;
+  background-color: blue;
+  color: white;
+  margin-top: 15px;
+  font-size: medium;
+  font-style: italic;
+}
+
+.Whole .Trending_Categories select option{
+    color: black;
+  background-color: white;
+}
+.Whole .navelement nav ul{
+    display: flex;
+    list-style-type: none;
+     gap:30px;
+}
+
+.Whole .navelement nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+
