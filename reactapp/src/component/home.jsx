@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/home.css"; // Import CSS file for styling
 import Homediv1 from "./Homediv1";
 import Homediv2 from "./Homediv2"
+import NewArrival from "./NewArrival";
 const Home = () => {
     const cards = [
         {
@@ -29,6 +30,7 @@ const Home = () => {
         <div>
             <Homediv1/>
             <Homediv2/>
+            <NewArrival/>
         <div className="home">
             <h1 className="home-title">Our Drinks</h1>
             <div className="card-container">
