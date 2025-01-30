@@ -5,8 +5,8 @@
   
   .product-card {
     position: relative;
-    text-align: center;
-    width: 200px; /* Adjust as needed */
+    /* text-align: center; */
+    width: 100%; /* Adjust as needed */
   }
   
   .image-container {
@@ -15,6 +15,7 @@
   
   .image-container img {
     width: 100%;
+    height: 100%px;
     display: block;
   }
   
@@ -41,4 +42,50 @@
   .image-container:hover .overlay {
     opacity: 1;
   }
+
+  /* Star Rating Styles */
+.stars {
+  font-size: 20px;
+  margin-top: 0px;
+}
+
+.star {
+  color: silver; /* Default white */
+}
+
+.star.filled {
+  color: gold; /* Yellow for filled stars */
+}
+/* Color Circle Styles */
+.color-options {
+  display: flex;
+  /* justify-content: center; */
+  gap: 5px;
+  margin-top: 8px;
+}
+
+.color-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+/* Define specific colors */
+.silver {
+  background-color: silver;
+}
+
+.Chamoisee {
+  background-color: rgb(203, 94, 15);
+}
+
+.white {
+  background-color: white;
+  border: 1px solid #aaa; /* White needs a border to be visible */
+}
+
+.Arsenic {
+  background-color: rgb(124, 122, 122);
+}
   

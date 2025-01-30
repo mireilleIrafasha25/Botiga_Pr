@@ -21,7 +21,7 @@ const Homediv2 = () => {
                         <Link to="">
                             <img src={category.image} alt={category.title} className="card-image" />
                         </Link>
-                        <p className="card-title">{category.title}</p>
+                      <div>  <p className="card-title">{category.title}</p></div>
                     </div>
                 ))}
             </div>

@@ -1,7 +1,7 @@
 /* Home Page */
 .home {
     /* text-align: center; */
-    padding: 20px;
+    padding: 0px;
     background-color: white;
 }
 
@@ -15,29 +15,30 @@
 /* Category Cards */
 .card-container {
     display: flex;
-    justify-content: space-between; /* Distributes cards evenly */
+    /* justify-content: space-between; Distributes cards evenly */
     /* align-items: center; */
-    gap: 20px;
-    overflow-x: auto; /* Allows scrolling if needed */
-    padding: 10px;
-    white-space: nowrap; /* Prevents cards from wrapping */
+    gap: 0px;
+    /* overflow-x: auto; Allows scrolling if needed */
+    padding: 0px;
+    /* white-space: nowrap; Prevents cards from wrapping */
     width: 100%;
-    flex-wrap: nowrap; /* Ensures all cards stay on one line */
+    /* flex-wrap: nowrap; Ensures all cards stay on one line */
+    margin: 0px;;
 }
 
 .card {
     background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
     width: 180px; /* Set fixed width for consistency */
     text-align: center;
     transition: transform 0.3s ease-in-out;
-    padding: 10px;
+    padding-right :0px;
     flex-shrink: 0; /* Prevents shrinking when screen is small */
 }
-
+/* 
  .card:hover {
     transform: scale(1.05);
-} 
+}  */
 
 .card a {
     display: block;
@@ -45,14 +46,14 @@
 }
 
 .card-image {
-    width: 100%;
-    height: 120px;
+    width: 50%;
+    height: 100px;
     object-fit: contain; /* Ensures the full image is shown */
-    border-radius: 8px;
-    transition: opacity 0.3s ease-in-out;
+    border-radius: 0px;
+    /* transition: opacity 0.3s ease-in-out; */
     background-color: white; /* Prevents blank areas */
 }
 
- .card-image:hover {
+ /* .card-image:hover {
     opacity: 0.8;
-} 
+}  */
