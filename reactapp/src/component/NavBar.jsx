@@ -1,6 +1,7 @@
 import 'font-awesome/css/font-awesome.min.css';
 import "../styles/PhoneIcon.css"
 import "../styles/navbar.css";
+import {Link} from "react-router-dom"
 const NavBar=()=>
 {
     return(
@@ -17,11 +18,21 @@ const NavBar=()=>
         <div className="navelement">
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Vendors</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
+                <Link to="/" style={{
+                    textDecoration:"none",
+                }}><li><a href="#">Home</a></li></Link>
+                <Link to="/shop"style={{
+                    textDecoration:"none",
+                }}><li><a href="#">Shop</a></li></Link>
+                <Link to="/vendor"style={{
+                    textDecoration:"none",
+                }}><li><a href="#">Vendors</a></li></Link>
+                <Link to="/blog"style={{
+                    textDecoration:"none",
+                }}><li><a href="#">Blog</a></li></Link>
+                <Link to="/contact"style={{
+                    textDecoration:"none",
+                }}><li><a href="#">Contact</a></li></Link>
             </ul>
         </nav>
         </div>
