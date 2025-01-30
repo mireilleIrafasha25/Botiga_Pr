@@ -1,0 +1,32 @@
+/* Color Circle Styles */
+.color-options {
+    display: flex;
+    /* justify-content: center; */
+    gap: 5px;
+    margin-top: 8px;
+  }
+  
+  .color-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+  }
+  
+  /* Define specific colors */
+  .silver {
+    background-color: silver;
+  }
+  
+  .Chamoisee {
+    background-color: rgb(203, 94, 15);
+  }
+  
+  .white {
+    background-color: white;
+    border: 1px solid #aaa; /* White needs a border to be visible */
+  }
+  
+  .Arsenic {
+    background-color: rgb(124, 122, 122);
+  }

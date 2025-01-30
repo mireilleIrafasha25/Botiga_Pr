@@ -3,6 +3,7 @@ import './App.css'
 import Layout from "./component/Layout"
 import Home from "./component/home"
 import Shop from "./component/Shop"
+import Vendors from "./component/Vendor"
 function App() {
   
 
@@ -14,6 +15,7 @@ function App() {
         
         {/* Add your routes here */}
         <Route path="shop" element={<Shop/>} />
+        <Route path="vendor" element={<Vendors/>} />
         </Route>
       </Routes>
     </Router>

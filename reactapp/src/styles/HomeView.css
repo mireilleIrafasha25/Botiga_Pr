@@ -1,0 +1,134 @@
+.home-contentents-container {
+    max-width: 1200px;
+    gap: 10px;
+    justify-content: center;
+    margin-left: 10rem;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+    background-color: white;
+  }
+  
+  .content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    gap: 20px;
+  }
+  
+  .categories {
+    display: flex;
+    font-family: sans-serif;
+    gap: 10rem;
+    margin-top: 0;
+  }
+  
+  .categories ul {
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    gap: 4px;
+    font-family: sans-serif;
+  }
+  
+  .categories ul li {
+    cursor: pointer;
+    color: black;
+    transition: background 0.3s ease;
+  }
+  
+  .categories ul li:hover {
+    background-color: #ececec;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .home-content-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .shop-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+  
+  .shop-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .popular-categories,
+  .new-arrival-products,
+  .vendors-list {
+    margin-top: 30px;
+  }
+  
+  .popular-product,
+  .arrival-list,
+  .vendors-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .categories-card {
+    padding: 10px;
+    width: 170px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .arrivals-card {
+    width: 300px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .vendors-card {
+    padding: 10px;
+    width: 300px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  .products-images {
+    width: 155px;
+    height: 156;
+  }
+  .arrivals-images {
+    width: 300px;
+    height: 156;
+  }
+  .vendords-images {
+    width: 256px;
+    margin-top: 2px;
+  }
+  
+  .products-heading {
+    font-size: 20px;
+    font-weight: lighter;
+  }
+  .vendors-heading {
+    font-size: 20px;
+    font-weight: lighter;
+  }

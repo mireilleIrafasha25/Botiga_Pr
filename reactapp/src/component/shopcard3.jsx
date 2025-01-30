@@ -1,34 +1,34 @@
 import React from "react";
 import "../styles/NewArrival.css"; // Import the CSS file
 import {Link} from "react-router-dom"
-const NewArrival = () => {
+const ShopCard3= () => {
   // Product data array
   const products = [
     {
       id: 1,
-      image: "./bootleOG.jpg", // Replace with actual image
-      name: "All In One Bottle",
+      image: "./shoes.jpg", // Replace with actual image
+      name: "John Sport Shoes",
       price: "$22.00 - $55.00",
-      rating:3,
-      colors: ["Arsenic", "Chamoisee", "silver","white"],
+      rating:5,
+      colors: ["Arsenic", "Chamoisee","silver","white"],
     },
     {
       id: 2,
-      image: "/amazon1.jpg", 
-      name: "Amazon Alexa",
+      image: "/mouse12.jpg", 
+      name: "Mouse Raxer",
       price: "$49.00 - $69.00",
       rating:5,
-      colors: ["Arsenic", "white"]
+      colors: ["Arsenic", "Chamoisee","silver","white"],
 
     },
     {
       id: 3,
-      image: "/headset21.jpg", 
-      name: "Headset Gamer Legion",
+      image: "/santa Monica.jpg", 
+      name: "Santa Monica",
       price: "$22.00 - $55.00",
-      rating:4,
+      rating:5,
       colors: ["Arsenic", "Chamoisee", "silver","white"],
-    },
+    }
   ];
   const renderStars = (rating) => {
     return Array.from({ length: 5 }, (_, index) => (
@@ -62,24 +62,8 @@ const NewArrival = () => {
   };
 
   return (<div>
-    <div><h2>New Arrival Product</h2></div>
-  <div className="product-list">{renderProducts()}</div>
-  <div style={{
-    alignItems: 'center',
-  }}><Link to="/"
-  ><button style={{
-    backgroundColor: "#69727d",
-    color: "white",
-    padding: "10px 20px",
-    borderRadius: "5px",
-    fontWeight: "bold",
-    border:"1px solid #69727d",
-    marginLeft:"40%",
-    marginTop:"20px",
-    marginBottom:"20px"
-  
-}}>SHOP NOW</button></Link></div>
+  <div className="product-list" style={{marginTop:"50px",marginBottom:"50px"}}>{renderProducts()}</div>
   </div>)
 };
 
-export default NewArrival;
+export default ShopCard3;

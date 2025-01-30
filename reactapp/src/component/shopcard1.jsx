@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/NewArrival.css"; // Import the CSS file
 import {Link} from "react-router-dom"
-const NewArrival = () => {
+const ShopCard1 = () => {
   // Product data array
   const products = [
     {
@@ -24,11 +24,11 @@ const NewArrival = () => {
     {
       id: 3,
       image: "/headset21.jpg", 
-      name: "Headset Gamer Legion",
+      name: "Headset Gamer",
       price: "$22.00 - $55.00",
       rating:4,
       colors: ["Arsenic", "Chamoisee", "silver","white"],
-    },
+    }
   ];
   const renderStars = (rating) => {
     return Array.from({ length: 5 }, (_, index) => (
@@ -62,24 +62,8 @@ const NewArrival = () => {
   };
 
   return (<div>
-    <div><h2>New Arrival Product</h2></div>
   <div className="product-list">{renderProducts()}</div>
-  <div style={{
-    alignItems: 'center',
-  }}><Link to="/"
-  ><button style={{
-    backgroundColor: "#69727d",
-    color: "white",
-    padding: "10px 20px",
-    borderRadius: "5px",
-    fontWeight: "bold",
-    border:"1px solid #69727d",
-    marginLeft:"40%",
-    marginTop:"20px",
-    marginBottom:"20px"
-  
-}}>SHOP NOW</button></Link></div>
   </div>)
 };
 
-export default NewArrival;
+export default ShopCard1;
