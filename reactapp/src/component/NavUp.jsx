@@ -21,7 +21,7 @@ const NavUp=()=>
                     </form>
                 </div>
                 <div className="search">
-                 <SearchBar />
+                 <SearchBar/>
                 </div>
             </div>
             <div className="icon-container">

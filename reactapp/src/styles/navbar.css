@@ -1,7 +1,7 @@
 .Whole{
     display: flex;
     background-color: blue;
-    gap:200px
+    gap:190px
 }
 .Trending_Categories select{
   border: 1px solid blue;

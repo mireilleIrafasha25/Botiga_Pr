@@ -6,13 +6,14 @@
         border-radius: 0.5rem;    /* Equivalent to rounded-lg (8px) */
         padding: 0.5rem;          /* Equivalent to p-2 (8px) */
         width: 18rem;   
-        gap:50px;          /* Equivalent to w-72 (18 * 16px = 288px) */
+        gap:50px;
+        height: 25px;          /* Equivalent to w-72 (18 * 16px = 288px) */
     }
     .search-input {
         margin-left: 0.5rem;   /* Equivalent to ml-2 (8px) */
         outline: none;         /* Equivalent to outline-none */
         width: 100%;           /* Equivalent to w-full */
-        background: transparent; /* Equivalent to bg-transparent */
+        /* background: transparent; Equivalent to bg-transparent */
         border: none;          /* Ensures no border */
     }
     .search-icon {
