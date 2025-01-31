@@ -1,7 +1,7 @@
-.price-container {
+/* .price-container {
     width: 300px;
     margin: auto;
-    /* text-align: center; */
+    /* text-align: center; 
     font-family: Arial, sans-serif;
   }
   
@@ -66,4 +66,24 @@
     background-color: #333;
     color: white;
   }
+   */
+   .price-values {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+  }
   
+  .price-box {
+    border: 1px solid black;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+  }
+  .price-slider {
+    width: 100%;
+    appearance: none;
+    height: 0px;
+    border-radius: 0px;
+    border: none;
+    outline: none;
+  }

@@ -3,7 +3,7 @@ import "../styles/priceslider.css"; // Import CSS file
 
 const Price = () => {
   const minPrice = 0;
-  const maxPrice = 100; // Set maximum price (adjust as needed)
+  const maxPrice = 79; // Set maximum price (adjust as needed)
   const [price, setPrice] = useState(maxPrice);
   const [showReset, setShowReset] = useState(false);
 

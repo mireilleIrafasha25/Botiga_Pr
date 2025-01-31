@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/vendordiv1.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import { FaThLarge, FaList } from "react-icons/fa";
 
 const stores = [
@@ -10,21 +11,33 @@ const stores = [
 
 const VendorUI = () => {
   const [showFilter, setShowFilter] = useState(false);
-
+ const [layout, setLayout] = useState("grid");
   return (
     <div className="vendor-ui">
-      <div style={{width:"100%",height:"70px",alignItems:"center",justifyContent:"center", textAlign:"center",backgroundColor:"white"}}><h1>Store List</h1></div>
+      <div style={{width:"100%",height:"100px",alignItems:"center",justifyContent:"center", textAlign:"center",backgroundColor:"white",paddingTop:"40px"}}><h1 style={{fontStyle:"italic",fontFamily:"monospace",fontSize:"40px"}}>Store List</h1></div>
       <div className="top-bar" style={{height:"50px"}}>
         <span>Total stores showing: {stores.length}</span>
-        <button className="filter-btn" onClick={() => setShowFilter(!showFilter)}>Filter</button>
+      <div style={{display:"flex",gap:"10px",backgroundColor:"blue",paddingLeft:"5px",textAlign:"center",justifyContent:"center",alignItems:"center",height:"50px",width:"190px"}}><i className="fas fa-sliders-h" style={{  fontSize: "18px",color: "white"}}></i><button className="filter-btn" style={{backgroundColor:"blue",border:"none",color:"white"}} onClick={() => setShowFilter(!showFilter)}> Filter</button></div>
         {showFilter && (
-          <div className="filter-options">
-            <input type="text" placeholder="Search..." />
-            <button>Apply</button>
+          <div className="filter-options" style={{display:"flex",gap:"20px"}}>
+            <input type="text" placeholder="Search..." style={{width:"250px"}} />
+            <button style={{backgroundColor:"blue",border:"none",color:"white"}}>Apply</button>
           </div>
         )}
-        <span>Sort by: <select><option>Most Recent</option></select></span>
-        
+        <span style={{display:"flex",gap:"20px"}}>Sort by: <select style={{border:"1px solid white",backgroundColor:"white", height:"20px"}}><option style={{border:"none"}}>Most Recent</option>
+        <option style={{border:"none"}}>Most Recent</option>
+        <option style={{border:"none"}}>Most Recent</option>
+        <option style={{border:"none"}}>Most Recent</option></select></span>
+        <div className="layout-icons">
+                  <FaList 
+                    className={`icon ${layout === "list" ? "active" : ""}`} 
+                    onClick={() => setLayout("list")} 
+                  />
+                  <FaThLarge 
+                    className={`icon ${layout === "grid" ? "active" : ""}`} 
+                    onClick={() => setLayout("grid")} 
+                  />
+                </div>
       </div>
       <div className="store-list">
         {stores.map((store, index) => (

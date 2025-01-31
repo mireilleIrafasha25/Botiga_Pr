@@ -54,10 +54,10 @@ const ShopDiv2=()=>
                 </ul>
                 <Colors />
                 <div className="rating">
-                    <h4>Rating</h4>
+                    <h4 style={{color:"black"}}>Rating</h4>
                     <div style={{display:"flex", gap:"90px"}}>
                         <Stars/>
-                        <div style={{display:"flex",gap:"10px",flexDirection:"column",marginTop:"5px"}}>
+                        <div style={{display:"flex",gap:"10px",flexDirection:"column",marginTop:"5px",color:"black"}}>
                             <div>(8)</div>
                         <div>(3)</div>
                         <div>(2)</div>

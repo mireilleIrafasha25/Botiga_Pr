@@ -30,7 +30,7 @@ body {
 }
 
 .filter-button {
-    background-color: #5d49ff;
+    background-color: blue;
     color: white;
     border: none;
     padding: 8px 16px;
@@ -78,7 +78,7 @@ body {
 }
 
 .filter-dropdown.show {
-    display: block;
+    display: inline-block;
 }
 
 .search-input {

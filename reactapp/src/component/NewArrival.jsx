@@ -66,7 +66,7 @@ const NewArrival = () => {
   <div className="product-list">{renderProducts()}</div>
   <div style={{
     alignItems: 'center',
-  }}><Link to="/"
+  }}><Link to="/shop"
   ><button style={{
     backgroundColor: "#69727d",
     color: "white",

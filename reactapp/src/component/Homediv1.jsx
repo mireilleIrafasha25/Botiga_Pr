@@ -54,7 +54,7 @@ const Homediv1=()=>
                 width:"200px"
             }}>
                 <h2>Explore our latest and greatest electronics</h2>
-                <Link to="/"><button style={{
+                <Link to="/shop"><button style={{
                     backgroundColor: "#69727d",
                     color: "white",
                     padding: "10px 20px",
