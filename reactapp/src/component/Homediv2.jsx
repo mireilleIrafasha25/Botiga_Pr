@@ -4,12 +4,12 @@ import "../styles/homediv2.css";
 
 const Homediv2 = () => {
     const categories = [
-        { id: 1, title: "Body Lotion", image: "/body lotion.jpg", category: "BodyLotion" },
-        { id: 2, title: "Sport", image: "/sport.jpg", category: "sport" },
-        { id: 3, title: "Computer Gadgets", image: "/mouse.jpg", category: "Computergadgets" },
-        { id: 4, title: "Electronics", image: "/electronics.jpg", category: "electronics" },
-        { id: 5, title: "Watch", image: "/watch.jpg", category: "watch" },
-        { id: 6, title: "Women Clothes", image: "/women.jpg", category: "womenclothes" }
+        { id: 1, title: "Body Lotion", image: "/BodyLotion1.jpg", category: "BodyLotion" },
+        { id: 2, title: "Sport", image: "/sports1.jpg", category: "sport" },
+        { id: 3, title: "Computer Gadgets", image: "/computer Gadget1.jpg", category: "Computergadgets" },
+        { id: 4, title: "Electronics", image: "/electronica.jpg", category: "electronics" },
+        { id: 5, title: "Watch", image: "/watch1.jpg", category: "watch" },
+        { id: 6, title: "Women Clothes", image: "/women category.jpg", category: "womenclothes" }
     ];
 
     return (

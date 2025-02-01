@@ -6,6 +6,7 @@ import Shop from "./component/Shop"
 import Vendors from "./component/Vendor"
 import Contact from "./component/contact"
 import Blog from "./component/Blog"
+import User from "./component/User"
 function App() {
   
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="vendor" element={<Vendors/>} />
         <Route path="contact" element={<Contact/>} />
         <Route path="blog" element={<Blog/>} />
+        <Route path="user" element={<User />} />
         </Route>
       </Routes>
     </Router>

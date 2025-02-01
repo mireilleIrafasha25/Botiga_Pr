@@ -1,6 +1,7 @@
 import SearchBar from "./SearchBar"
 import "../styles/navup.css"
 import React from 'react';
+import {Link} from "react-router-dom"
 import { FaUser, FaChartBar, FaHeart } from 'react-icons/fa';
 const NavUp=()=>
 {
@@ -25,7 +26,7 @@ const NavUp=()=>
                 </div>
             </div>
             <div className="icon-container">
-      <FaUser className="icon" size={24} />
+     <Link to="user"><FaUser className="icon" size={24} /></Link> 
       <FaChartBar className="icon" size={24} />
       <FaHeart className="icon" size={24} />
     </div>
