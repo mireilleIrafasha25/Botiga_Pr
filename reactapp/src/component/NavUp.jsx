@@ -26,8 +26,8 @@ const NavUp=()=>
                 </div>
             </div>
             <div className="icon-container">
-     <Link to="user"><FaUser className="icon" size={24} /></Link> 
-      <FaChartBar className="icon" size={24} />
+     <Link to="/user"><FaUser className="icon" size={24} /></Link> 
+    <Link to="/form"> <FaChartBar className="icon" size={24} /></Link> 
       <FaHeart className="icon" size={24} />
     </div>
         </div>
