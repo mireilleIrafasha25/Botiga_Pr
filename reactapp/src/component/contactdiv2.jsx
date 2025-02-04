@@ -4,15 +4,17 @@ import axios from "axios";
 import { useState } from 'react';
 import {useNavigate} from 'react-router-dom'
 const ContactForm = () => {
-  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message1,setMessage1]=useState('');
   const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
-      const response=await axios.post("http://localhost:5007/Weeding/user/signup",
+      const response=await axios.post("http://localhost:5007/Weeding/contact/add",
        { 
         email,
         name,
@@ -21,11 +23,14 @@ const ContactForm = () => {
       );
       setMessage(response.data.message);
       setTimeout(()=>{
-        navigate("/contact")
-      },1000)
+        navigate("/contact");
+      },1000);
       
     } catch (error) {
       setMessage(error.response?.data?.message|| "Failed to send message");
+    }
+    finally{
+      setLoading(false);
     }
   }
   return (
@@ -43,9 +48,9 @@ const ContactForm = () => {
           <input type="email" value={email} placeholder="Your Email" required onChange={(e)=>setEmail(e.target.value)} style={{marginBottom:"20px"}}/>
 
           <label style={{marginBottom:"10px"}}>Comment or Message</label>
-          <textarea placeholder="Your Message" value={message1} onChange={(e)=>setMessage1(e.target.value)} ></textarea>
+          <textarea placeholder="Your Message" value={message1} onChange={(e)=>setMessage1(e.target.value)} required></textarea>
 
-          <button type="submit">Submit</button>
+          <button type="submit" disabled={loading}>{loading? "submitting ...":"Submit"}</button>
         </form>
         {message && <p>{message}</p> }
       </div>
