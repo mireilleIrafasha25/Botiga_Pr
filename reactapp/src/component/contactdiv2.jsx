@@ -1,26 +1,53 @@
 import React from 'react';
 import '../styles/contactdiv2.css';
-
+import axios from "axios";
+import { useState } from 'react';
+import {useNavigate} from 'react-router-dom'
 const ContactForm = () => {
+  const navigate = useNavigate();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message1,setMessage1]=useState('');
+  const [message, setMessage] = useState('');
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response=await axios.post("http://localhost:5007/Weeding/user/signup",
+       { 
+        email,
+        name,
+        message1,
+       }
+      );
+      setMessage(response.data.message);
+      setTimeout(()=>{
+        navigate("/contact")
+      },1000)
+      
+    } catch (error) {
+      setMessage(error.response?.data?.message|| "Failed to send message");
+    }
+  }
   return (
     <div className="contact-container">
       <div className="contact-form">
         <h2 style={{marginBottom:"20px"}}>Leave Us a Message</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
           <label style={{marginBottom:"10px"}}>Name <span>*</span></label>
           <div className="name-fields" style={{marginBottom:"20px"}}>
-            <input type="text" placeholder="First" required />
-            <input type="text" placeholder="Last" required />
+            <input type="text" value={name} onChange={(e)=>setName(e.target.value)} placeholder="First" required />
+            {/* <input type="text" placeholder="Last"   required /> */}
           </div>
 
           <label style={{marginBottom:"10px"}}>Email <span>*</span></label>
-          <input type="email" placeholder="Your Email" required style={{marginBottom:"20px"}}/>
+          <input type="email" value={email} placeholder="Your Email" required onChange={(e)=>setEmail(e.target.value)} style={{marginBottom:"20px"}}/>
 
           <label style={{marginBottom:"10px"}}>Comment or Message</label>
-          <textarea placeholder="Your Message"></textarea>
+          <textarea placeholder="Your Message" value={message1} onChange={(e)=>setMessage1(e.target.value)} ></textarea>
 
           <button type="submit">Submit</button>
         </form>
+        {message && <p>{message}</p> }
       </div>
       
       <div style={{marginLeft:"90px"}}>
