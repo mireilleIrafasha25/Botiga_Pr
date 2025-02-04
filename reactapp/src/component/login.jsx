@@ -1,90 +1,175 @@
-import {Link} from "react-router-dom";
-import axios from "axios";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import axios from 'axios';
+import { IoClose } from "react-icons/io5";
+import Register_own from './Registration Own';
+const Login = ({HandleLoginForm}) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const[message,setMessage]=useState('');
+  const [loading,setLoading] = useState(false);
 
-
-const Login=()=>   
-{
-    const [email,setEmail]=useState(""); //set email
-    const [password,setPassword]=useState(""); // state pf password must be empty
-    const [message,setMessage]=useState("");  //state of  message should be empty
-    const [loading,setLoading]=useState(false); // state of loading button
-    const navigate=useNavigate(); // function used to redirect navigation
-
-    const handleSubmit=async(e)=>
-    {
-        e.preventDefault();
-        setLoading(true);
-        try{
-            const response=await axios.post("http://localhost:5007/Weeding/user/signin",{
-                email,
-                password,
-            });
-            // set message to success message
-            setMessage(response.data.message);
-            localStorage.setItem("token",response.data.token); // save token in local storage
-
-            setTimeout(()=>
-            {
-                navigate("/dashboard"); // redirect to dashboard
-
-            },1000);
-        }
-        catch(error){
-            setMessage(error.response?.data?.message || "Login failed!");
-        }
-        finally{
-            setLoading(false); // stop loading button
-        }
-    };
-    <style>
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+    setLoading(true);
+    try{
+        const response= await axios.post("http://localhost:5007/Weeding/user/signin",
         {
-            `body {
-    font-family: Sen,sans-serif;
-    font-weight: 400;}
-    h1,h2,h2,h4,h4,h5{
-     font-family: Overlock,display;}
-}`
-        }
-    </style>
-    return (
-        <div style={{marginLeft:"20px",marginBottom:"20px"}}>
-             <h1 style={{fontFamily:"Overlock,display"}}>Login</h1>
-            <div className="login" style={{display:"inline-block",alignItems:"center",justifyContent:"center",border:"2px solid white",borderRadius:"10px",
-                paddingLeft:"90px",paddingRight:"0px",
-                width:"400px",paddingTop:"60px",paddingBottom:"60px",background:"white"
-            }}>
-           
-            <form onSubmit={handleSubmit}>
-               <div> <label style={{fontFamily:"Overlock,display",fontWeight:"unset"}}>Username or email <span style={{color:"red"}} > *</span></label>
-                <input type="email"  value={email} onChange={(e)=> setEmail(e.target.value) } required style={{
-                marginTop: "15px",
-                backgroundColor: "white",
-                color: "black",
-                padding: "10px",
-                borderRadius: "5px",
-                height:"30px",
-                width:"250px"}}  className="eml" /></div>
-                <div><label style={{marginTop:"15px",fontFamily:"Overlock,display",fontWeight:"unset"}}>Password <span style={{color:"red"}}> *</span></label>
-                <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} required    style={{
-                marginTop: "15px",
-                backgroundColor: "white",
-                color: "black",
-                padding: "10px",
-                borderRadius: "5px",
-                height:"30px",
-                width:"250px"
-              }} className="pass" /></div>
-                <div style={{display:"flex",marginTop:"15px",gap:"20px",}}><label><input type="checkbox"/></label><label style={{fontFamily:"Overlock,display",fontWeight:"unset"}}>Remember me</label></div>
-               <div> <button disabled={loading} type="submit" style={{marginTop:"15px",backgroundColor:"#112",width:"100px",height:"40px",textAlign:"center",fontFamily:"Overlock,display"}}>{loading? "Logging in ...":"LOG IN"}</button></div>
-               <div><Link to="/newPassword" style={{color:"black",fontFamily:"Overlock,display"}}> <u>Lost your password</u></Link></div>
-                
-            </form>
-            {message && <p>{message}</p>}
-            </div>
-           
-        </div>
-    )
+            email,
+            password,
+        });
+        setMessage(response.data.message)
+        localStorage.setItem("token",response.data.token);
+        
+    }
+    catch(error){
+        setMessage(error.response?.data?.message ||'Login Failed')
+    }
+    finally{
+        setLoading(false);
+    }
+  };
+   const [model,useModel] = useState(false);
+   const HandleSignUpForm=()=>
+    {
+        useModel(!model)
+    }
+const styles={
+    overlay: {
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        backgroundColor: "rgba(0, 0, 0, 0.5)", // Black transparent background
+        zIndex: 1000, // Ensures it's on top of everything
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      },
+      modal: {
+        backgroundColor: "white",
+        padding: "2rem",
+        borderRadius: "8px",
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+        width: "400px",
+        maxWidth: "90%",
+      },
 }
+  return (
+    <div
+      style={styles.overlay}
+    >
+        {model && <Register_own HandleSignUpForm={HandleSignUpForm} />}
+      <div
+        style={styles.modal}
+      >
+        <div style={{display:"flex",gap:"300px",flexDirection:"row"}}><div
+          style={{
+            fontSize: '1.5rem',
+            fontWeight: 'bold',
+            textAlign: 'center',
+            color: '#4a5568',
+          }}
+        >
+          Login
+        </div><IoClose onClick={HandleLoginForm} style={{marginTop:"10px"}} /></div>
+        <form onSubmit={handleSubmit} style={{ marginTop: '1.5rem' }}>
+          <div style={{ marginBottom: '1rem' }}>
+            <label
+              htmlFor="email"
+              style={{
+                display: 'block',
+                color: '#718096',
+                marginBottom: '0.5rem',
+              }}
+            >
+              Email
+            </label>
+            <input
+              type="email"
+             value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
+              required
+              style={{
+                width: '100%',
+                padding: '0.5rem 1rem',
+                border: '1px solid #cbd5e0',
+                borderRadius: '0.375rem',
+                outline: 'none',
+                marginTop: '0.25rem',
+                transition: 'box-shadow 0.2s',
+              }}
+            />
+          </div>
+          <div style={{ marginBottom: '1rem' }}>
+            <label
+              htmlFor="password"
+              style={{
+                display: 'block',
+                color: '#718096',
+                marginBottom: '0.5rem',
+              }}
+            >
+              Password
+            </label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter your password"
+              required
+              style={{
+                width: '100%',
+                padding: '0.5rem 1rem',
+                border: '1px solid #cbd5e0',
+                borderRadius: '0.375rem',
+                outline: 'none',
+                marginTop: '0.25rem',
+                transition: 'box-shadow 0.2s',
+              }}
+            />
+          </div>
+          <button
+            type="submit"
+            style={{
+              width: '100%',
+              padding: '0.75rem',
+              backgroundColor:'blue',
+              color: 'white',
+
+              borderRadius: '0.375rem',
+              fontWeight: 'bold',
+              transition: 'background-color 0.3s',
+              border: 'none',
+              cursor: 'pointer',
+            }}
+            onMouseOver={(e) => (e.target.style.backgroundColor = '#38a169')}
+            onMouseOut={(e) => (e.target.style.backgroundColor = '#48bb78')}
+            disabled={loading}
+          >
+            {loading? 'Loading...' : 'Login'}
+          </button>
+        </form>
+        {message && <p style={{ marginTop: '1rem', color: '#e74c3c' }}>{message}</p>}
+        <p style={{ marginTop: '1rem', textAlign: 'center', color: '#718096' }}>
+          Don’t have an account?{' '}
+          <button
+            onClick={HandleSignUpForm}
+            style={{
+              color: 'blue',
+              background:"none",
+              textDecoration: 'none',
+            }}
+            onMouseOver={(e) => (e.target.style.textDecoration = 'underline')}
+            onMouseOut={(e) => (e.target.style.textDecoration = 'none')}
+          >
+            Register
+          </button>
+        </p>
+      </div>
+    </div>
+  );
+};
+
 export default Login;

@@ -3,7 +3,9 @@ import axios from "axios";
 // import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-const Register_own=()=>
+import { IoClose } from "react-icons/io5";
+import Login from "./login";
+const Register_own=({HandleSignUpForm})=>
 {
     const [Firstname,setFirstname] =useState("");
     const [Lastname, setLastname] = useState("");
@@ -17,7 +19,11 @@ const Register_own=()=>
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword); 
       };
-
+const [modal,useModal]=useState(false);
+const HandleLoginForm=()=>
+    {
+        useModal(!modal)
+    }
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
@@ -41,11 +47,43 @@ const Register_own=()=>
             setLoading(false);
         }
     };
-
+    const styles={
+        overlay: {
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.5)", // Black transparent background
+            zIndex: 1000, // Ensures it's on top of everything
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          },
+          modal: {
+            backgroundColor: "white",
+            padding: "2rem",
+            borderRadius: "8px",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+            width: "600px",
+            maxWidth: "90%",
+          },
+    }
     return(
-        <div style={{display:"flex",flexDirection:"column",gap:"20px",alignItems:"center",justifyContent:"center"}}>
-            <h1>SignUp</h1>
-            {message && <p>{message}</p>}
+        <div style={styles.overlay}>
+            {modal && <Login HandleLoginForm={HandleLoginForm} />}
+            <div style={styles.modal}>
+            <div style={{display:"flex",gap:"420px",flexDirection:"row",marginBottom:"20px"}}><div
+          style={{
+            fontSize: '1.5rem',
+            fontWeight: 'bold',
+            textAlign: 'center',
+            color: '#4a5568',
+          }}
+        >
+          Register
+        </div><div><IoClose onClick={HandleSignUpForm} style={{marginTop:"0px", fontSize: "30px",cursor:"pointer"}}/></div></div>
+            
             <form onSubmit={handleSubmit} style={{display:"flex",flexDirection:"column",gap:"20px"}}>
                 <div style={{display:"flex",gap:"20px"}}><span style={{color:"black",paddingTop:"10px"}}>First Name:</span><input type="text" placeholder="Firstname" value={Firstname} onChange={(e)=>setFirstname(e.target.value)} style={{width:"400px"}} required/></div>
                 <div style={{display:"flex",gap:"20px"}}><span style={{color:"black",paddingTop:"10px"}}>Last Name:</span><input type="text" placeholder="Lastname" value={Lastname} onChange={(e)=>setLastname(e.target.value)} style={{width:"400px"}} required/></div>
@@ -64,9 +102,12 @@ const Register_own=()=>
             {/* {showPassword ? <FaEyeSlash /> : <FaEye />} */}
           </span></div>
           <div style={{display:"flex",gap:"20px"}}><span style={{color:"black",paddingTop:"10px"}}>ConfirmPassword</span> <input type="password" placeholder="Re-type your password" value={confirmPassword} onChange={(e)=>setConfirmPassword(e.target.value)} style={{width:"360px"}} required/></div>
-              <div style={{display:"flex",gap:"20px"}}> <button type="submit" disabled={loading} style={{width:"200px",marginLeft:"0px"}}>SIGN UP</button> <span style={{marginTop:"25px",color:"black"}}>Already have account<Link to="/login" style={{color:"blue",marginLeft:"5px"}}>Login</Link></span></div> 
+              <div style={{display:"flex",gap:"20px"}}> <button type="submit" disabled={loading} style={{width:"200px",marginLeft:"0px"}}>SIGN UP</button> <span style={{marginTop:"25px",color:"black"}}>Already have account<button onClick={HandleLoginForm} style={{color:"blue",marginLeft:"5px",background:"none"}}>Login</button></span></div> 
+              {message && <p style={{color:"red"}}>{message}</p>}
             </form>
             {loading && <p>Loading...</p>}
+           
+            </div>
         </div>
     )
 }

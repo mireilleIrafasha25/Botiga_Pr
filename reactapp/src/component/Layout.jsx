@@ -5,8 +5,8 @@ import Footer2 from "./footer2"
 const Layout=()=>
 {
     return(
-        <div>
-            <NavUp />
+        <div >
+            <NavUp/>
             <NavBar />
             <Outlet />
             <Footer2 />

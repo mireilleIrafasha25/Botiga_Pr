@@ -3,9 +3,11 @@
     color: white;
     padding: 50px 80px;
     font-family: Arial, sans-serif;
+   
   }
   
   .footer-container {
+    
     display: flex;
     justify-content: space-between;
     /* border-bottom: 1px solid gray; */

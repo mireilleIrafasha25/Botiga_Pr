@@ -4,12 +4,27 @@ import React from 'react';
 import {Link} from "react-router-dom"
 import { FaUser, FaChartBar, FaHeart } from 'react-icons/fa';
 import { useState } from "react";
+import Login from "./login";
+import { useNavigate } from "react-router-dom";
+import Register_own from "./Registration Own";
 
-import LoginForm from "./form";
 const NavUp=()=>
 {
+    const [modal,useModal]=useState(false);
+    const [model,useModel] = useState(false);
+    const navigate=useNavigate();
+    const HandleLoginForm=()=>
+    {
+        useModal(!modal)
+    }
+    const HandleSignUpForm=()=>
+    {
+        useModel(!model)
+    }
     return(
         <div className="Whole-Navup">
+            {modal && <Login HandleLoginForm={HandleLoginForm} />}
+            {model && <Register_own HandleSignUpForm={HandleSignUpForm} />}
             <div className="Logo">
                 <h3>Botiga</h3>
             </div>
@@ -29,9 +44,9 @@ const NavUp=()=>
                 </div>
             </div>
             <div className="icon-container">
-     <Link to="/user"><FaUser className="icon" size={24} /></Link> 
-    <Link to="/form"> <FaChartBar className="icon" size={24} /></Link> 
-    <Link to="/register">  <FaHeart className="icon" size={24} /></Link>
+     <button style={{background:"blue"}} onClick={HandleLoginForm}>LOGIN</button> 
+     {/* <FaChartBar className="icon" size={24} />  */}
+    <button style={{background:"blue"}} onClick={HandleSignUpForm}> REGISTER</button>
     </div>
         </div>
         
