@@ -3,6 +3,9 @@ import "../styles/navup.css"
 import React from 'react';
 import {Link} from "react-router-dom"
 import { FaUser, FaChartBar, FaHeart } from 'react-icons/fa';
+import { useState } from "react";
+
+import LoginForm from "./form";
 const NavUp=()=>
 {
     return(
@@ -31,6 +34,7 @@ const NavUp=()=>
     <Link to="/register">  <FaHeart className="icon" size={24} /></Link>
     </div>
         </div>
+        
     )
 }
 

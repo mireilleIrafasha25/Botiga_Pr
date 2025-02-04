@@ -1,7 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+// import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Register_own=()=>
 {
     const [Firstname,setFirstname] =useState("");
@@ -14,7 +15,7 @@ const Register_own=()=>
      const [confirmPassword, setConfirmPassword] = useState("");
     const navigate = useNavigate();
     const togglePasswordVisibility = () => {
-        setShowPassword(!showPassword); // Guhindura state ya password
+        setShowPassword(!showPassword); 
       };
 
     const handleSubmit = async (e) => {
@@ -42,7 +43,7 @@ const Register_own=()=>
     };
 
     return(
-        <div style={{display:"flex",flexDirection:"column",gap:"20px"}}>
+        <div style={{display:"flex",flexDirection:"column",gap:"20px",alignItems:"center",justifyContent:"center"}}>
             <h1>SignUp</h1>
             {message && <p>{message}</p>}
             <form onSubmit={handleSubmit} style={{display:"flex",flexDirection:"column",gap:"20px"}}>
@@ -60,10 +61,10 @@ const Register_own=()=>
               cursor: "pointer",
             }}
           >
-            {showPassword ? <FaEyeSlash /> : <FaEye />}
+            {/* {showPassword ? <FaEyeSlash /> : <FaEye />} */}
           </span></div>
           <div style={{display:"flex",gap:"20px"}}><span style={{color:"black",paddingTop:"10px"}}>ConfirmPassword</span> <input type="password" placeholder="Re-type your password" value={confirmPassword} onChange={(e)=>setConfirmPassword(e.target.value)} style={{width:"360px"}} required/></div>
-                <button type="submit" disabled={loading} style={{width:"200px",marginLeft:"150px"}}>SIGN UP</button>
+              <div style={{display:"flex",gap:"20px"}}> <button type="submit" disabled={loading} style={{width:"200px",marginLeft:"0px"}}>SIGN UP</button> <span style={{marginTop:"25px",color:"black"}}>Already have account<Link to="/login" style={{color:"blue",marginLeft:"5px"}}>Login</Link></span></div> 
             </form>
             {loading && <p>Loading...</p>}
         </div>

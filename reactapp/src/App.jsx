@@ -9,6 +9,7 @@ import Blog from "./component/Blog"
 import User from "./component/User"
 import LoginForm from "./component/form"
 import Register_own from "./component/Registration Own"
+import Navbar231 from "./component/nav2pro"
 function App() {
   
 

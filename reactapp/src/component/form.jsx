@@ -1,68 +1,55 @@
-import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; // 👉 Redirect
+import { useState } from "react";
 
-function LoginForm() {
-  const [email, setEmail] = useState(""); 
+const Login = ({ onClose }) => {
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [message, setMessage] = useState(""); 
-  const [loading, setLoading] = useState(false); // ✅ Loading state
-
-  const navigate = useNavigate(); // 👉 Function yo gukora redirect
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // 👉 Tugaragaza ko API iri gukorana
-
+    setLoading(true);
     try {
       const response = await axios.post("http://localhost:5007/Weeding/user/signin", {
         email,
         password,
       });
-
       setMessage(response.data.message);
-      localStorage.setItem("token", response.data.token); // ✅ Kubika token muri localStorage
-
+      localStorage.setItem("token", response.data.token);
+      
       setTimeout(() => {
-        navigate("/dashboard"); // ✅ Redirect kuri dashboard nyuma ya 1s
+        onClose(); // Close the login form after success
       }, 1000);
     } catch (error) {
       setMessage(error.response?.data?.message || "Login failed!");
     } finally {
-      setLoading(false); // 👉 Hagarika loading state nyuma ya response
+      setLoading(false);
     }
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
+    <div style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100vh", background: "rgba(0,0,0,0.5)", display: "flex", justifyContent: "center", alignItems: "center" }}>
+      <div style={{ background: "white", padding: "20px", borderRadius: "10px", width: "400px" }}>
+        <h1>Login</h1>
+        <form onSubmit={handleSubmit}>
           <label>Email:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div>
+          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          
           <label>Password:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit" disabled={loading}>
-          {loading ? "Logging in..." : "Login"} {/* ✅ Loading button */}
-        </button>
-      </form>
+          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          
+          <button disabled={loading} type="submit">{loading ? "Logging in..." : "Log In"}</button>
+        </form>
+        
+        {/* Show error message if login fails */}
+        {message && <p>{message}</p>}
 
-      {message && <p>{message}</p>}
+        {/* Close button */}
+        <button onClick={onClose} style={{ marginTop: "10px", background: "red", color: "white" }}>Close</button>
+      </div>
     </div>
   );
-}
+};
 
-export default LoginForm;
+export default Login;
