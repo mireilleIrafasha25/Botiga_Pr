@@ -9,6 +9,8 @@ import Blog from "./component/Blog"
 import User from "./component/User"
 import LoginForm from "./component/form"
 import Register_own from "./component/Registration Own"
+import BlogDetails from "./component/BlogDetails"
+import BlogDetails2 from "./component/blogDetails2"
 function App() {
   
 
@@ -26,6 +28,8 @@ function App() {
         <Route path="user" element={<User />} />
         <Route path="form" element={<LoginForm />} />
         <Route path="register" element={<Register_own />} />
+        <Route path="/blog/:id" element={<BlogDetails />} />
+        <Route path="/blog2/:id" element={<BlogDetails2 />} />
         </Route>
       </Routes>
     </Router>

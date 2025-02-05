@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link} from "react-router-dom"
 const blogData = [
   {
     id: 1,
@@ -82,12 +82,15 @@ const BlogCard2 = () => {
       <div className="blog-list">
         {blogData.map((blog) => (
           <div key={blog.id} className="blog-card">
+            <Link to={`/blog2/${blog.id}`}>
             <img src={blog.image} alt="blog" />
+          </Link>
             <div className="blog-content">
               <p className="date">{blog.date}</p>
               <h3>{blog.title}</h3>
               <p className="description">{blog.description}</p>
-              <div style={{marginTop:"30px"}}><a href="#" className="readmore" style={{color:"black",fontSize:"15px"}}>{blog.readmore}</a></div>
+              <Link to={`/blog2/${blog.id}`}>
+              <div style={{marginTop:"30px"}}><a href="#" className="readmore" style={{color:"black",fontSize:"15px"}}>{blog.readmore}</a></div></Link>
             </div>
           </div>
         ))}
