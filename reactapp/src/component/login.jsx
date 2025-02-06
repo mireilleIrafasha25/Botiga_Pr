@@ -2,77 +2,85 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { IoClose } from "react-icons/io5";
 import Register_own from './Registration Own';
-const Login = ({HandleLoginForm}) => {
+import { useNavigate } from 'react-router-dom';
+
+const Login = ({ HandleLoginForm }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const[message,setMessage]=useState('');
-  const [loading,setLoading] = useState(false);
+  const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async(e) => {
+  // Initialize useNavigate hook
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    try{
-        const response= await axios.post("http://localhost:5007/Weeding/user/signin",
-        {
-            email,
-            password,
-        });
-        setMessage(response.data.message)
-        localStorage.setItem("token",response.data.token);
-        
-    }
-    catch(error){
-        setMessage(error.response?.data?.message ||'Login Failed')
-    }
-    finally{
-        setLoading(false);
+    try {
+      const response = await axios.post("http://localhost:5007/Weeding/user/signin", {
+        email,
+        password,
+      });
+      setMessage(response.data.message);
+
+      // Store token in localStorage
+      localStorage.setItem("token", response.data.token);
+
+      // Navigate to the dashboard after successful login
+      navigate('/dashboard');  // Assuming '/dashboard' is the route for your dashboard
+     HandleLoginForm();
+    } catch (error) {
+      setMessage(error.response?.data?.message || 'Login Failed');
+    } finally {
+      setLoading(false);
     }
   };
-   const [model,useModel] = useState(false);
-   const HandleSignUpForm=()=>
-    {
-        useModel(!model)
-    }
-const styles={
+
+  const [model, useModel] = useState(false);
+  const HandleSignUpForm = () => {
+    useModel(!model);
+  };
+
+  const styles = {
     overlay: {
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        backgroundColor: "rgba(0, 0, 0, 0.5)", // Black transparent background
-        zIndex: 1000, // Ensures it's on top of everything
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      },
-      modal: {
-        backgroundColor: "white",
-        padding: "2rem",
-        borderRadius: "8px",
-        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-        width: "400px",
-        maxWidth: "90%",
-      },
-}
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      backgroundColor: "rgba(0, 0, 0, 0.5)", // Black transparent background
+      zIndex: 1000, // Ensures it's on top of everything
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    modal: {
+      backgroundColor: "white",
+      padding: "2rem",
+      borderRadius: "8px",
+      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+      width: "400px",
+      maxWidth: "90%",
+    },
+  };
+
   return (
-    <div
-      style={styles.overlay}
-    >
-        {model && <Register_own HandleSignUpForm={HandleSignUpForm} />}
-      <div
-        style={styles.modal}
-      >
-        <div style={{display:"flex",gap:"300px",flexDirection:"row"}}><div
-          style={{
-            fontSize: '1.5rem',
-            fontWeight: 'bold',
-            textAlign: 'center',
-            color: '#4a5568',
-          }}
-        >
-          Login
-        </div><IoClose onClick={HandleLoginForm} style={{marginTop:"10px"}} /></div>
+    <div style={styles.overlay}>
+      {model && <Register_own HandleSignUpForm={HandleSignUpForm} />}
+      <div style={styles.modal}>
+        <div style={{ display: "flex", gap: "300px", flexDirection: "row" }}>
+          <div
+            style={{
+              fontSize: '1.5rem',
+              fontWeight: 'bold',
+              textAlign: 'center',
+              color: '#4a5568',
+            }}
+          >
+            Login
+          </div>
+          <IoClose onClick={HandleLoginForm} style={{ marginTop: "10px" }} />
+        </div>
         <form onSubmit={handleSubmit} style={{ marginTop: '1.5rem' }}>
           <div style={{ marginBottom: '1rem' }}>
             <label
@@ -87,7 +95,7 @@ const styles={
             </label>
             <input
               type="email"
-             value={email}
+              value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
               required
@@ -135,9 +143,8 @@ const styles={
             style={{
               width: '100%',
               padding: '0.75rem',
-              backgroundColor:'blue',
+              backgroundColor: 'blue',
               color: 'white',
-
               borderRadius: '0.375rem',
               fontWeight: 'bold',
               transition: 'background-color 0.3s',
@@ -148,7 +155,7 @@ const styles={
             onMouseOut={(e) => (e.target.style.backgroundColor = '#48bb78')}
             disabled={loading}
           >
-            {loading? 'Loading...' : 'Login'}
+            {loading ? 'Loading...' : 'Login'}
           </button>
         </form>
         {message && <p style={{ marginTop: '1rem', color: '#e74c3c' }}>{message}</p>}
@@ -158,7 +165,7 @@ const styles={
             onClick={HandleSignUpForm}
             style={{
               color: 'blue',
-              background:"none",
+              background: "none",
               textDecoration: 'none',
             }}
             onMouseOver={(e) => (e.target.style.textDecoration = 'underline')}

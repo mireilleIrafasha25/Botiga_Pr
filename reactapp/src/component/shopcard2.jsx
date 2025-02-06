@@ -49,7 +49,7 @@ const ShopCard2= () => {
     return products.map((product) => (
       <div className="product-card" key={product.id}>   
         <div className="image-container">
-          <img src={product.image} alt={product.name} />
+          <Link to={`/product2/${product.id}`}><img src={product.image} alt={product.name} /></Link>
           <div className="overlay select">Select Options</div>
           <div className="overlay quick-view">Quick View</div>
         </div>

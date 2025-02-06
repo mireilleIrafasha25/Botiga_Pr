@@ -11,6 +11,11 @@ import LoginForm from "./component/form"
 import Register_own from "./component/Registration Own"
 import BlogDetails from "./component/BlogDetails"
 import BlogDetails2 from "./component/blogDetails2"
+import ProductDetails from "./component/ProductCardDetails"
+import UserDashboard from "./component/dashboard"
+import ProductDetails2 from "./component/productCard2Details"
+import ProductDetails3 from "./component/productCard3Details"
+import ImageGallery from "./component/imageGallery"
 function App() {
   
 
@@ -30,6 +35,11 @@ function App() {
         <Route path="register" element={<Register_own />} />
         <Route path="/blog/:id" element={<BlogDetails />} />
         <Route path="/blog2/:id" element={<BlogDetails2 />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/product2/:id" element={<ProductDetails2 />} />
+        <Route path="/product3/:id" element={<ProductDetails3 />} />
+        <Route path="gallery" element={<ImageGallery />} />
+        <Route path="/dashboard" element={<UserDashboard />} />
         </Route>
       </Routes>
     </Router>
