@@ -6,7 +6,7 @@ const Homediv1=()=>
             display: 'flex',
             gap:"290px",
             marginTop:"0px"
-        }}>
+        }} className="homediv-container">
             <div className="productHome">
                 <ul style={{
                     listStyleType: 'none',

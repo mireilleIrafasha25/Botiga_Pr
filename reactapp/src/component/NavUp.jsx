@@ -26,7 +26,7 @@ const NavUp=()=>
             {modal && <Login HandleLoginForm={HandleLoginForm} />}
             {model && <Register_own HandleSignUpForm={HandleSignUpForm} />}
             <div className="Logo">
-               <Link to="/gallery"><h3>Botiga</h3></Link> 
+               <h3>Botiga</h3>
             </div>
             <div className="search-and-category">
                 <div className="category">

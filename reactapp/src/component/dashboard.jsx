@@ -1,109 +1,62 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+import jwt_decode from 'jwt-decode'; // default import
+
 
 const UserDashboard = () => {
-  const [userData, setUserData] = useState({});
-  const [loading, setLoading] = useState(true); // to manage loading state
-  const [error, setError] = useState(null); // to handle errors
+  const token = localStorage.getItem('token');
+  let userData = {};
 
-  useEffect(() => {
-    // Fetch user data using Axios
-    const fetchUserData = async () => {
-      try {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/users/1'); // Sample API URL
-        setUserData({
-          name: response.data.name,
-          email: response.data.email,
-          activities: ["Created a new post", "Updated profile", "Logged in"], // You can change this to real data from your API if needed
-        });
-      } catch (error) {
-        setError('There was an error fetching the user data.');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchUserData();
-  }, []);
-
-  // Inline CSS styles
-  const styles = {
-    dashboard: {
-      display: 'flex',
-      height: '100vh',
-    },
-    sidebar: {
-      width: '20%',
-      backgroundColor: '#333',
-      color: 'white',
-      padding: '20px',
-      textAlign: 'center',
-    },
-    content: {
-      width: '80%',
-      padding: '20px',
-    },
-    title: {
-      fontSize: '24px',
-      fontWeight: 'bold',
-    },
-    userInfo: {
-      marginTop: '20px',
-    },
-    activities: {
-      marginTop: '30px',
-      listStyleType: 'none',
-      paddingLeft: '0',
-    },
-    activityItem: {
-      backgroundColor: '#f4f4f4',
-      padding: '10px',
-      marginBottom: '10px',
-    },
-    loading: {
-      textAlign: 'center',
-      fontSize: '18px',
-      color: 'gray',
-    },
-    error: {
-      color: 'red',
-      textAlign: 'center',
-      fontSize: '18px',
-    },
-  };
+  if (token) {
+    userData = jwt_decode(token); // Decode token to get user data
+  }
 
   return (
-    <div style={styles.dashboard}>
-      <div style={styles.sidebar}>
-        <h2>Dashboard</h2>
-        <ul>
-          <li>Profile</li>
-          <li>Activities</li>
-          <li>Settings</li>
-        </ul>
-      </div>
-      <div style={styles.content}>
-        {loading ? (
-          <p style={styles.loading}>Loading user data...</p>
-        ) : error ? (
-          <p style={styles.error}>{error}</p>
-        ) : (
-          <>
-            <h1 style={styles.title}>Welcome, {userData.name}</h1>
-            <div style={styles.userInfo}>
-              <p>Email: {userData.email}</p>
-            </div>
-            <h2>Recent Activities</h2>
-            <ul style={styles.activities}>
-              {userData.activities && userData.activities.map((activity, index) => (
-                <li key={index} style={styles.activityItem}>{activity}</li>
-              ))}
-            </ul>
-          </>
-        )}
+    <div style={styles.container}>
+      <div style={styles.row}>
+        {/* Part 1: User Profile */}
+        <div style={styles.profileCard}>
+          <h2>User Profile</h2>
+          <p><strong>Firstname:</strong> {userData.Firstname}</p>
+          <p><strong>Lastname:</strong> {userData.Lastname}</p>
+          <p><strong>Email:</strong> {userData.email}</p>
+          <p><strong>Role:</strong> {userData.role === 'admin' ? 'Administrator' : 'User'}</p>
+        </div>
+
+        {/* Part 2: Welcome Message */}
+        <div style={styles.welcomeCard}>
+          <h2>Welcome to your dashboard, {userData.firstname}!</h2>
+          <p>This is your personal space where you can manage your profile and view your activities.</p>
+        </div>
       </div>
     </div>
   );
+};
+
+const styles = {
+  container: {
+    padding: '20px',
+    maxWidth: '1200px',
+    margin: '0 auto',
+  },
+  row: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    gap: '20px',
+  },
+  profileCard: {
+    flex: 1,
+    backgroundColor: '#f0f0f0',
+    padding: '20px',
+    borderRadius: '8px',
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+  },
+  welcomeCard: {
+    flex: 2,
+    backgroundColor: '#e6f7ff',
+    padding: '20px',
+    borderRadius: '8px',
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+  },
 };
 
 export default UserDashboard;

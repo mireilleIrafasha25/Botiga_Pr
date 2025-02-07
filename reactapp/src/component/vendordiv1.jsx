@@ -6,7 +6,7 @@ import { FaThLarge, FaList } from "react-icons/fa";
 const stores = [
   { name: "John Doe's Store", rating: 5, location: "Central Park, New York, United States (US)", image: "/JohnDoeStore.jpg", circleImage: "/JohnDoeStore.jpg",sign:">" },
   { name: "Jessica's Store", rating: 4, location: "Central Park, New York, United States (US)", image: "/JessicaStore.jpg", circleImage: "/JessicaStore.jpg", sign:">" },
-  { name: "Santa Monica's Store", rating: 5, location: "Central Park, New York, United States (US)", image: "/SantaStore.jpg", circleImage: "/SantaStore.jpg" , sign:">" }
+  { name: "Santa Monica's Store", rating: 5, location: "Central Park,New York, United States (US)", image: "/SantaStore.jpg", circleImage: "/SantaStore.jpg" , sign:">" }
 ];
 
 const VendorUI = () => {
@@ -48,14 +48,15 @@ const VendorUI = () => {
               <div className="store-info">
               <h3>{store.name}</h3>
               <div className="rating">{'★'.repeat(store.rating)}{'☆'.repeat(5 - store.rating)}</div>
-              <p>{store.location}</p>
+               <p>{store.location}</p>
+             
             </div>
             </div>
             
-            <div>
-                
+            <div  >
+            <button className="navigate-btn">{store.sign}</button>
             </div>
-            <button className="navigate-btn" >{store.sign}</button>
+      
           </div>
        
           
