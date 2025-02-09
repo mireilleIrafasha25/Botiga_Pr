@@ -6,7 +6,7 @@ const NavBar=()=>
 {
     return(
         <div className="Whole">
-        <div className="Trending_Categories">
+       <Link to="admin-dashboard"> <div className="Trending_Categories">
             <select id="options" name="dropdown">
                 <option value="Select a Category">Trending Categories</option>
                 <option value="Electronics">Electronics</option>
@@ -14,7 +14,7 @@ const NavBar=()=>
                 <option value="Home">Home</option>
                 <option value="Sports">Sports</option>
             </select>
-        </div>
+        </div></Link>
         <div className="navelement">
         <nav>
             <ul>

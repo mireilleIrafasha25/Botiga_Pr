@@ -10,37 +10,37 @@ const Login = ({ HandleLoginForm }) => {
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
+  const [model, useModel] = useState(false);  // For registration form modal
 
-  // Initialize useNavigate hook
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
     try {
       const response = await axios.post("http://localhost:5007/Weeding/user/signin", {
         email,
         password,
       });
-      setMessage(response.data.message);
 
-      const token = response.data.token;  // Get the token from the response
+      const token = response.data.token;
       localStorage.setItem("token", token);
-      
       const decoded = jwt_decode(token);
       const userRole = decoded.role;
-      
+
+      // Close modal first
+      HandleLoginForm();
 
       // Navigate based on the user role
       if (userRole === "admin") {
         navigate('/dashboard');
       } else if (userRole === "user") {
         navigate('/');
-      } 
-      else {
-        navigate('/shop'); // Fallback route if role doesn't match
+      } else {
+        navigate('/shop');
       }
-     HandleLoginForm();
+
     } catch (error) {
       setMessage(error.response?.data?.message || 'Login Failed');
     } finally {
@@ -48,9 +48,8 @@ const Login = ({ HandleLoginForm }) => {
     }
   };
 
-  const [model, useModel] = useState(false);
   const HandleSignUpForm = () => {
-    useModel(!model);
+    useModel((prev) => !prev);
   };
 
   const styles = {
@@ -60,8 +59,8 @@ const Login = ({ HandleLoginForm }) => {
       left: 0,
       width: "100%",
       height: "100%",
-      backgroundColor: "rgba(0, 0, 0, 0.5)", // Black transparent background
-      zIndex: 1000, // Ensures it's on top of everything
+      backgroundColor: "rgba(0, 0, 0, 0.5)",
+      zIndex: 1000,
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -75,41 +74,18 @@ const Login = ({ HandleLoginForm }) => {
       maxWidth: "90%",
     },
   };
-const token = localStorage.getItem('token');
-  let userData = {};
 
-  if (token) {
-    userData = jwt_decode(token); // Decode token to get user data
-  }
   return (
     <div style={styles.overlay}>
       {model && <Register_own HandleSignUpForm={HandleSignUpForm} />}
       <div style={styles.modal}>
-        <div style={{ display: "flex", gap: "300px", flexDirection: "row" }}>
-          <div
-            style={{
-              fontSize: '1.5rem',
-              fontWeight: 'bold',
-              textAlign: 'center',
-              color: '#4a5568',
-            }}
-          >
-            Login
-          </div>
-          <IoClose onClick={HandleLoginForm} style={{ marginTop: "10px" }} />
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <h2 style={{ color: '#4a5568' }}>Login</h2>
+          <IoClose onClick={HandleLoginForm} style={{ cursor: "pointer", fontSize: "1.5rem" }} />
         </div>
         <form onSubmit={handleSubmit} style={{ marginTop: '1.5rem' }}>
           <div style={{ marginBottom: '1rem' }}>
-            <label
-              htmlFor="email"
-              style={{
-                display: 'block',
-                color: '#718096',
-                marginBottom: '0.5rem',
-              }}
-            >
-              Email
-            </label>
+            <label htmlFor="email" style={{ display: 'block', color: '#718096', marginBottom: '0.5rem' }}>Email</label>
             <input
               type="email"
               value={email}
@@ -123,21 +99,11 @@ const token = localStorage.getItem('token');
                 borderRadius: '0.375rem',
                 outline: 'none',
                 marginTop: '0.25rem',
-                transition: 'box-shadow 0.2s',
               }}
             />
           </div>
           <div style={{ marginBottom: '1rem' }}>
-            <label
-              htmlFor="password"
-              style={{
-                display: 'block',
-                color: '#718096',
-                marginBottom: '0.5rem',
-              }}
-            >
-              Password
-            </label>
+            <label htmlFor="password" style={{ display: 'block', color: '#718096', marginBottom: '0.5rem' }}>Password</label>
             <input
               type="password"
               value={password}
@@ -151,7 +117,6 @@ const token = localStorage.getItem('token');
                 borderRadius: '0.375rem',
                 outline: 'none',
                 marginTop: '0.25rem',
-                transition: 'box-shadow 0.2s',
               }}
             />
           </div>
@@ -164,12 +129,9 @@ const token = localStorage.getItem('token');
               color: 'white',
               borderRadius: '0.375rem',
               fontWeight: 'bold',
-              transition: 'background-color 0.3s',
               border: 'none',
               cursor: 'pointer',
             }}
-            onMouseOver={(e) => (e.target.style.backgroundColor = 'blue')}
-            onMouseOut={(e) => (e.target.style.backgroundColor = 'blue')}
             disabled={loading}
           >
             {loading ? 'Loading...' : 'Login'}
@@ -180,13 +142,7 @@ const token = localStorage.getItem('token');
           Don’t have an account?{' '}
           <button
             onClick={HandleSignUpForm}
-            style={{
-              color: 'blue',
-              background: "none",
-              textDecoration: 'none',
-            }}
-            onMouseOver={(e) => (e.target.style.textDecoration = 'underline')}
-            onMouseOut={(e) => (e.target.style.textDecoration = 'none')}
+            style={{ color: 'blue', background: "none", border: "none", cursor: "pointer" }}
           >
             Register
           </button>

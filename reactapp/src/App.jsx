@@ -8,7 +8,6 @@ import Contact from "./component/contact"
 import Blog from "./component/Blog"
 import User from "./component/User"
 import Login from "./component/login"
-// import LoginForm from "./component/form"
 import Register_own from "./component/Registration Own"
 import BlogDetails from "./component/BlogDetails"
 import BlogDetails2 from "./component/blogDetails2"
@@ -18,6 +17,8 @@ import ProductDetails2 from "./component/productCard2Details"
 import ProductDetails3 from "./component/productCard3Details"
 import ImageGallery from "./component/imageGallery"
 import AuthProvider from "./component/AuthProvider"
+import ManageUsers from "./component/ManageUsers"
+import AdminDashboard from "./component/adminDashboard"
 function App() {
   
 
@@ -43,6 +44,8 @@ function App() {
         <Route path="/product3/:id" element={<ProductDetails3 />} />
         <Route path="gallery" element={<ImageGallery />} />
         <Route path="/dashboard" element={<UserDashboard />} />
+        <Route path="manage-users" element={<ManageUsers />} />
+        <Route path="admin-dashboard" element={<AdminDashboard />} />
 
         </Route>
       </Routes>
