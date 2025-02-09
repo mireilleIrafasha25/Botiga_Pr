@@ -1,12 +1,13 @@
 import 'font-awesome/css/font-awesome.min.css';
 import "../styles/PhoneIcon.css"
 import "../styles/navbar.css";
+
 import {Link} from "react-router-dom"
 const NavBar=()=>
 {
     return(
         <div className="Whole">
-       <Link to="admin-dashboard"> <div className="Trending_Categories">
+       <Link to="user-list"> <div className="Trending_Categories">
             <select id="options" name="dropdown">
                 <option value="Select a Category">Trending Categories</option>
                 <option value="Electronics">Electronics</option>

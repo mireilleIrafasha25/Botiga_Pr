@@ -3,6 +3,9 @@ import jwt_decode from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from './AuthProvider';
 import ManageUsers from './ManageUsers';
+import UserChart from './userchart';
+import { FaUsers } from "react-icons/fa6";
+import { FaRegChartBar } from 'react-icons/fa';
 const UserDashboard = () => {
   const token = localStorage.getItem('token');
   let userData = {};
@@ -39,14 +42,9 @@ const UserDashboard = () => {
       <div style={styles.row}>
         {/* User Profile Section */}
         <div style={styles.profileCard}>
-          <h2>User Profile</h2>
-          <p><strong>Firstname:</strong> {userData.Firstname || 'N/A'}</p>
-          <p><strong>Lastname:</strong> {userData.Lastname || 'N/A'}</p>
-          <p><strong>Email:</strong> {userData.email || 'N/A'}</p>
-          <p><strong>Role:</strong> {userData.role === 'admin' ? 'Administrator' : 'User'}</p>
           <div style={styles.actions}>
-            <button style={styles.actionButton} onClick={() => HandleActionClick('manageUsers')}>Manage Users</button>
-            <button style={styles.actionButton} onClick={() => HandleActionClick('reports')}>View Reports</button>
+           <div style={{display:"flex",gap:"20px"}}> <FaUsers onClick={() => HandleActionClick('manageUsers')}/><span onClick={() => HandleActionClick('manageUsers')} style={{color:"black"}}>Users</span></div>
+            <FaRegChartBar onClick={() => HandleActionClick('reports')}/>
             <button style={styles.actionButton} onClick={()=>HandleActionClick('dashboard')}>DashBoard</button>
           </div>
         </div>
@@ -55,8 +53,12 @@ const UserDashboard = () => {
         <div style={styles.welcomeCard}>
           {activeContent==='dashboard' && (
             <div>
-          <h2>Welcome, Admin {userData.Firstname || 'User'}!</h2>
-          <p>Here you can manage users, monitor activities, and view system statistics.</p>
+              <h2>Dashboard</h2>
+              <p>Monitor system usage and activity.</p>
+              <UserChart />
+            
+          {/* <h2>Welcome, Admin {userData.Firstname || 'User'}!</h2>
+          <p>Here you can manage users, monitor activities, and view system statistics.</p> */}
           </div>
         )}
         {activeContent==='manageUsers' && (

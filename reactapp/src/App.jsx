@@ -18,7 +18,7 @@ import ProductDetails3 from "./component/productCard3Details"
 import ImageGallery from "./component/imageGallery"
 import AuthProvider from "./component/AuthProvider"
 import ManageUsers from "./component/ManageUsers"
-import AdminDashboard from "./component/adminDashboard"
+import UserList from "./component/userList"
 function App() {
   
 
@@ -45,7 +45,7 @@ function App() {
         <Route path="gallery" element={<ImageGallery />} />
         <Route path="/dashboard" element={<UserDashboard />} />
         <Route path="manage-users" element={<ManageUsers />} />
-        <Route path="admin-dashboard" element={<AdminDashboard />} />
+        <Route path="user-list" element={<UserList />} />
 
         </Route>
       </Routes>
