@@ -7,7 +7,8 @@ import Vendors from "./component/Vendor"
 import Contact from "./component/contact"
 import Blog from "./component/Blog"
 import User from "./component/User"
-import LoginForm from "./component/form"
+import Login from "./component/login"
+// import LoginForm from "./component/form"
 import Register_own from "./component/Registration Own"
 import BlogDetails from "./component/BlogDetails"
 import BlogDetails2 from "./component/blogDetails2"
@@ -16,10 +17,12 @@ import UserDashboard from "./component/dashboard"
 import ProductDetails2 from "./component/productCard2Details"
 import ProductDetails3 from "./component/productCard3Details"
 import ImageGallery from "./component/imageGallery"
+import AuthProvider from "./component/AuthProvider"
 function App() {
   
 
   return (
+    <AuthProvider>
     <Router>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -31,8 +34,8 @@ function App() {
         <Route path="contact" element={<Contact/>} />
         <Route path="blog" element={<Blog/>} />
         <Route path="user" element={<User />} />
-        <Route path="form" element={<LoginForm />} />
         <Route path="register" element={<Register_own />} />
+        <Route path="login" element={<Login/>}/>
         <Route path="/blog/:id" element={<BlogDetails />} />
         <Route path="/blog2/:id" element={<BlogDetails2 />} />
         <Route path="/product/:id" element={<ProductDetails />} />
@@ -40,10 +43,12 @@ function App() {
         <Route path="/product3/:id" element={<ProductDetails3 />} />
         <Route path="gallery" element={<ImageGallery />} />
         <Route path="/dashboard" element={<UserDashboard />} />
+
         </Route>
       </Routes>
     </Router>
+    </AuthProvider>
   )
 }
-
 export default App
+

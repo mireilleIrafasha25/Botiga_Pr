@@ -3,6 +3,7 @@ import axios from 'axios';
 import { IoClose } from "react-icons/io5";
 import Register_own from './Registration Own';
 import { useNavigate } from 'react-router-dom';
+import jwt_decode from 'jwt-decode';
 
 const Login = ({ HandleLoginForm }) => {
   const [email, setEmail] = useState('');
@@ -23,11 +24,22 @@ const Login = ({ HandleLoginForm }) => {
       });
       setMessage(response.data.message);
 
-      // Store token in localStorage
-      localStorage.setItem("token", response.data.token);
+      const token = response.data.token;  // Get the token from the response
+      localStorage.setItem("token", token);
+      
+      const decoded = jwt_decode(token);
+      const userRole = decoded.role;
+      
 
-      // Navigate to the dashboard after successful login
-      navigate('/dashboard');  // Assuming '/dashboard' is the route for your dashboard
+      // Navigate based on the user role
+      if (userRole === "admin") {
+        navigate('/dashboard');
+      } else if (userRole === "user") {
+        navigate('/');
+      } 
+      else {
+        navigate('/shop'); // Fallback route if role doesn't match
+      }
      HandleLoginForm();
     } catch (error) {
       setMessage(error.response?.data?.message || 'Login Failed');
@@ -63,7 +75,12 @@ const Login = ({ HandleLoginForm }) => {
       maxWidth: "90%",
     },
   };
+const token = localStorage.getItem('token');
+  let userData = {};
 
+  if (token) {
+    userData = jwt_decode(token); // Decode token to get user data
+  }
   return (
     <div style={styles.overlay}>
       {model && <Register_own HandleSignUpForm={HandleSignUpForm} />}
@@ -151,8 +168,8 @@ const Login = ({ HandleLoginForm }) => {
               border: 'none',
               cursor: 'pointer',
             }}
-            onMouseOver={(e) => (e.target.style.backgroundColor = '#38a169')}
-            onMouseOut={(e) => (e.target.style.backgroundColor = '#48bb78')}
+            onMouseOver={(e) => (e.target.style.backgroundColor = 'blue')}
+            onMouseOut={(e) => (e.target.style.backgroundColor = 'blue')}
             disabled={loading}
           >
             {loading ? 'Loading...' : 'Login'}
