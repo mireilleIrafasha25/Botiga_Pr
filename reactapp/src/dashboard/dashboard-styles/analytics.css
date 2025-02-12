@@ -1,0 +1,105 @@
+.dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 5px;
+    background-color: none;
+  }
+  
+  .stats-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+  }
+  
+  .stats-card h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #343a40;
+  }
+  
+  .stats-card p {
+    font-size: 24px;
+    color: #495057;
+    font-weight: bold;
+  }
+  
+  .chart-placeholder {
+    background-color: #e9ecef;
+    height: 200px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #6c757d;
+  }
+  
+  .table-placeholder {
+    grid-column: span 3;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .Column3{
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 5px;;
+  }
+  .othercolumn{
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+  }
+  .column2{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .BarChartcolumn{
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+  }
+  .column22{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+  .LineChartcolumn{
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color:#343a40
+  }
+  .User-table{
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color:#343a40
+  }
+
+  .card-title{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .card-title span{
+    color: #343a40;
+  }

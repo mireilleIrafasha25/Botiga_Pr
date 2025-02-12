@@ -5,28 +5,30 @@ import { FiUser } from "react-icons/fi";
 import { MdOutlineSettingsSuggest } from "react-icons/md";
 import { LiaSignOutAltSolid } from "react-icons/lia";
 import "./dashboard-styles/sidebar.css"
+import { useDarkMode } from "./context/DarkModeContext";
 const SideBar=()=>
 {
+    const {darkMode}=useDarkMode();
     return(
        
-        <div className="container">
-          <div className="Business">
+        <div className={`container ${darkMode?"dark":'light'}`}>
+          <div className={`Business ${darkMode?"dark":"light"}`}>
             <img src="/dashpicx1.jpg" alt="Business" />
             <span>Business</span>
             </div>  
             <div className="Main-Icon">
-            <div className="icon"><MdOutlineAnalytics/><span >Analytics</span></div>
-            <div className="icon"><MdOutlineProductionQuantityLimits/><span >Product</span></div>
-            <div className="icon"><CgMail/><span>Reports</span></div> 
-            <div className="icon"><FiUser/><span>Customers</span></div>
+            <div className={`icon ${darkMode?'dark':'light'}`}><MdOutlineAnalytics/><span >Analytics</span></div>
+            <div className={`icon ${darkMode?'dark':'light'}`}><MdOutlineProductionQuantityLimits/><span >Product</span></div>
+            <div className={`icon ${darkMode?'dark':'light'}`}><CgMail/><span>Reports</span></div> 
+            <div className={`icon ${darkMode?'dark':'light'}`}><FiUser/><span>Customers</span></div>
             
             </div>
             <div className="Main-Icon2">
-             <div className="icon2"><MdOutlineSettingsSuggest/><span>Settings</span></div>
-            <div className="icon2"><LiaSignOutAltSolid/><span>Sign Out</span></div>
+             <div className={`icon2 ${darkMode?'dark':'light'}`}><MdOutlineSettingsSuggest/><span>Settings</span></div>
+            <div className={`icon2 ${darkMode?'dark':'light'}`}><LiaSignOutAltSolid/><span>Sign Out</span></div>
             </div>
             <div className="Main-DivandCarton">
-                <div className="DivandCarton">
+                <div className={`DivandCarton ${darkMode?'dark':'light'}`}>
                     <img src="/CatoonMan.jpg" alt="User" />
                     <div className="ContactHelp">
                     Need Help feel Free to contact

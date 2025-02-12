@@ -8,7 +8,7 @@
   .Toggle-Switch {
     width: 50px;
     height: 24px;
-    background-color: #9370DB;
+    background-color: white;
     border-radius: 12px;
     position: relative;
     cursor: pointer;
@@ -17,13 +17,13 @@
   }
   
   .Toggle-Switch:hover {
-    background-color: #888;
+    background-color: #e0efeced;
   }
   
   .Toggle-Circle {
     width: 20px;
     height: 20px;
-    background-color: white;
+    background-color: blue;
     border-radius: 50%;
     position: absolute;
     top: 2px;
@@ -34,7 +34,12 @@
   
   .Toggle-Circle.dark {
     left: 28px;
-    background-color: white;
+    background-color: blue;
     box-shadow: 0 0 15px rgba(164, 164, 160, 0.8);
   }
-  
+  .Sun-Icon.dark {
+    fill: white;
+  }
+  .Moon-Icon.dark {
+    fill: white;
+  }
