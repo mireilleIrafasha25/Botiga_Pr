@@ -1,0 +1,20 @@
+.Main-NavBar{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-top: 20px;
+}
+.NumberCode{
+    background-color: white;
+    text-align:"center";
+}
+.NumberCode span{
+    color: #333;
+    font-size: 15px;
+    padding: 10px;
+}
+.calendar-icon{
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+}

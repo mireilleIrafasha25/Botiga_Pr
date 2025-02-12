@@ -5,7 +5,8 @@ import { useAuth } from './AuthProvider';
 import ManageUsers from './ManageUsers';
 import UserChart from './userchart';
 import { FaUsers } from "react-icons/fa6";
-import { FaRegChartBar } from 'react-icons/fa';
+import { TbReportSearch } from "react-icons/tb";
+import { AiTwotoneHome } from "react-icons/ai";
 const UserDashboard = () => {
   const token = localStorage.getItem('token');
   let userData = {};
@@ -43,9 +44,10 @@ const UserDashboard = () => {
         {/* User Profile Section */}
         <div style={styles.profileCard}>
           <div style={styles.actions}>
+          <div style={{display:"flex",gap:"20px"}}><AiTwotoneHome onClick={()=>HandleActionClick('dashboard')}/><span style={{color:"black"}} onClick={()=>HandleActionClick('dashboard')}>DashBoard</span></div>
            <div style={{display:"flex",gap:"20px"}}> <FaUsers onClick={() => HandleActionClick('manageUsers')}/><span onClick={() => HandleActionClick('manageUsers')} style={{color:"black"}}>Users</span></div>
-            <FaRegChartBar onClick={() => HandleActionClick('reports')}/>
-            <button style={styles.actionButton} onClick={()=>HandleActionClick('dashboard')}>DashBoard</button>
+           <div style={{display:"flex",gap:"20px"}}><TbReportSearch onClick={() => HandleActionClick('reports')}/> <span style={{color:"black"}} onClick={() => HandleActionClick('reports')}>Reports</span></div> 
+       
           </div>
         </div>
 

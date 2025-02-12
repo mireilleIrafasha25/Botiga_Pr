@@ -19,10 +19,14 @@ import ImageGallery from "./component/imageGallery"
 import AuthProvider from "./component/AuthProvider"
 import ManageUsers from "./component/ManageUsers"
 import UserList from "./component/userList"
+import AdminDashboardPro from "./dashboard/DashboardView"
+import DashboardLayout from "./dashboard/dashboardLayout"
+import { DarkModeProvider } from "./dashboard/context/DarkModeContext" 
 function App() {
   
 
   return (
+    <DarkModeProvider>
     <AuthProvider>
     <Router>
       <Routes>
@@ -46,11 +50,14 @@ function App() {
         <Route path="/dashboard" element={<UserDashboard />} />
         <Route path="manage-users" element={<ManageUsers />} />
         <Route path="user-list" element={<UserList />} />
-
+        </Route>
+        <Route path="/" element={<DashboardLayout/>}>
+          <Route path="/dashboard123" index element={<AdminDashboardPro/>} />
         </Route>
       </Routes>
     </Router>
     </AuthProvider>
+    </DarkModeProvider>
   )
 }
 export default App

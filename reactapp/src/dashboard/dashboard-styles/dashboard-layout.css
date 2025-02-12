@@ -1,0 +1,24 @@
+.Main-outlet{
+    display: flex;
+    flex-direction: row;
+}
+.SideBar-Element{
+    background-color: white;
+    width:300px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.NavBarDashboard{
+    height: 20px;
+    background-color:none;
+}
+.NavandDashboard{
+    background-color: rgb(241, 248, 248);
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    width:1000px;
+    padding-left:40px;
+    padding-right: 40px;
+    
+}
