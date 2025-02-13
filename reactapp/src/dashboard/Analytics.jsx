@@ -9,6 +9,9 @@ import { LuNotebook } from "react-icons/lu";
 import { TfiBag } from "react-icons/tfi";
 import { TbCircleDashedPercentage } from "react-icons/tb";
 import { useDarkMode } from "./context/DarkModeContext";
+import SimpleBarChart from "./BarChart";
+import { FaCaretDown } from "react-icons/fa6";
+import PieChart1 from "./dashboard-styles/PieChart1";
 const Analytics = () => {
   const { darkMode } = useDarkMode();
   const cardData = [
@@ -23,6 +26,12 @@ const Analytics = () => {
   const cardData2=[
     { title: "Paid Invoice", value: "$25,410",icon:<LuNotebook/>,perc:"0.2%" },
     { title: "Fund Received", value: "$145,652",icon:<TfiBag/> ,perc:"2.4%"},
+  ]
+  const cardData3=[
+    { title: "User", value: "4567"}
+  ]
+  const cardData4=[
+    { title: "Subscription", value: "256"}
   ]
 
   return (
@@ -52,11 +61,41 @@ const Analytics = () => {
       ))}
       </div>
       </div>
-      <div className="othercolumn">Column2</div>
-      <div className="othercolumn">Column3</div>
+      <div className="othercolumn">
+      <div className="dashboard-container3">
+      {/* Cards section */}
+      {cardData3.map((card, index) => (
+        <div className={`stats-card3 card-${index + 1}`} key={index}>
+          <div className="card-title3">{card.title}</div>
+          <div className="card-number3">{card.value}</div>
+          <div className="Arrow-Number3">since last month</div>
+         <PieChart1/>
+        </div>
+      ))}
+      </div>
+      </div>
+      <div className="othercolumn">
+      <div className="dashboard-container3">
+      {/* Cards section */}
+      {cardData4.map((card, index) => (
+        <div className={`stats-card3 card-${index + 1}`} key={index}>
+          <div className="card-title3">{card.title}</div>
+          <div className="card-number3">{card.value}</div>
+          <div className="Arrow-Number3">since last month</div>
+         <PieChart1/>
+        </div>
+      ))}
+      </div>
+      </div>
       </div>
       <div className="column2">
-        <div className="BarChartcolumn">Bar Chart</div>
+        <div className="BarChartcolumn">
+          <div className="Bar-top">
+            <div className="sale">Sale Dynamics</div>
+            <div className="Year-Bar"><span>2021 <FaCaretDown/> </span></div>
+          </div>
+        <SimpleBarChart />
+        </div>
         <div className="dashboard-container">
       {/* Cards section */}
       {cardData2.map((card, index) => (
@@ -71,7 +110,8 @@ const Analytics = () => {
       </div>
       </div>
       <div className="column22">
-        <div className="LineChartcolumn">Line Chart</div>
+        <div className="LineChartcolumn">Line Chart
+        </div>
         <div className="User-table">UserTable</div>
       </div>
       </div>
