@@ -103,3 +103,59 @@
   .card-title span{
     color: #343a40;
   }
+  .Up-icon{
+    size:5px;
+    color:blue
+  }
+.Arrow-Number{
+display: flex;
+flex-direction: row;
+gap:20px
+}
+.Arrow-Number span{
+  color:blue;
+  font-size: 10px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 3px;
+}
+.Arrow-Number div{
+  font-size: 10px;
+  width:80px;
+  color:gray;
+  margin-top: 3px;
+}
+.Down-icon{
+color: red;
+}
+.Arrow-Number .Down-Perc{
+  color: red;
+}
+.card-title2{
+  display: flex;
+  flex-direction: row;
+  gap:80px;
+ 
+}
+.card-title2 span{
+  color:#343a40
+}
+.card-title2 .circle-chart{
+  color:rgb(222, 222, 43)
+}
+.stats-card .title1{
+  color: gray;
+  font-size:10px;
+  margin-top:10px;
+  margin-bottom:10px
+}
+.stats-card .value{
+  font-size: 24px;
+  color: #495057;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.current-financial{
+  font-size:10px;
+  color:gray
+}
