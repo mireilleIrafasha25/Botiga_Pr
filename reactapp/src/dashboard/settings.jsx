@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import "./dashboard-styles/setting.css";
 import Profile from "./profile";
+import AccountTab from "./AccountTab";
+import PrivacyTab from "./PrivacyTab";
+import SystemPreferencesTab from "./preferenceTab";
+import UserRolesTab from "./UserRoles";
 const Settings = () => {
   const [activeTab, setActiveTab] = useState("Profile");
 
@@ -9,13 +13,13 @@ const Settings = () => {
       case "Profile":
         return <div><Profile/></div>;
       case "Account":
-        return <div>Change your password and manage authentication settings.</div>;
+        return <div><AccountTab/></div>;
       case "Privacy":
-        return <div>Control your data and view your activity log.</div>;
+        return <div><PrivacyTab/></div>;
       case "System Preferences":
-        return <div>Select your preferred language and theme (dark/light).</div>;
+        return <div><SystemPreferencesTab/></div>;
       case "User Roles":
-        return <div>Manage roles and permissions for users (Admin only).</div>;
+        return <div><UserRolesTab/></div>;
       default:
         return <div>Select a tab to see the content.</div>;
     }
