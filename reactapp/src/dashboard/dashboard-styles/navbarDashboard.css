@@ -1,8 +1,22 @@
 .Main-NavBar{
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    justify-content: space-between;
+     width: 56rem;
     padding-top: 20px;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 20px;
+
+   
+}
+.subdark
+{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
 }
 .NumberCode{
     background-color: white;

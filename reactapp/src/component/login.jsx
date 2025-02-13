@@ -34,11 +34,11 @@ const Login = ({ HandleLoginForm }) => {
 
       // Navigate based on the user role
       if (userRole === "admin") {
-        navigate('/dashboard');
+        navigate('/dashboard123');
       } else if (userRole === "user") {
         navigate('/');
       } else {
-        navigate('/shop');
+        navigate('/none');
       }
 
     } catch (error) {

@@ -11,7 +11,11 @@ import { TbCircleDashedPercentage } from "react-icons/tb";
 import { useDarkMode } from "./context/DarkModeContext";
 import SimpleBarChart from "./BarChart";
 import { FaCaretDown } from "react-icons/fa6";
-import PieChart1 from "./dashboard-styles/PieChart1";
+import PieChart1 from "./PieChart1";
+import SmallRadialChart from "./SmallPieChart";
+import LineChart1 from "./linechart";
+import CustomerOrderTable from "./customerTable";
+import { LuRefreshCw } from "react-icons/lu";
 const Analytics = () => {
   const { darkMode } = useDarkMode();
   const cardData = [
@@ -24,8 +28,8 @@ const Analytics = () => {
     { title: "Revenue", value: "1,352",icon:<BsCalendarEvent/> ,perc:"2.4%"},
   ]
   const cardData2=[
-    { title: "Paid Invoice", value: "$25,410",icon:<LuNotebook/>,perc:"0.2%" },
-    { title: "Fund Received", value: "$145,652",icon:<TfiBag/> ,perc:"2.4%"},
+    { title: "Paid Invoice", value: "$25,410",icon:<LuNotebook/>,perc:"0.2%",description:"The total paid invoices for the current financial year amount to $25,410,and verified payments received during this period." },
+    { title: "Fund Received", value: "$145,652",icon:<TfiBag/> ,perc:"2.4%",description:"15% of the current financial year's target has been met, with $145,652 received so far in funds."},
   ]
   const cardData3=[
     { title: "User", value: "4567"}
@@ -100,19 +104,28 @@ const Analytics = () => {
       {/* Cards section */}
       {cardData2.map((card, index) => (
         <div className={`stats-card card-${index + 1}`} key={index}>
-          <div className="card-title2"><span>{card.icon}</span><span className="circle-chart"><TbCircleDashedPercentage/></span></div>
+          <div className="card-title2"><span>{card.icon}</span><span className="circle-chart"><SmallRadialChart/></span></div>
           <div className="title1">{card.title}</div>
           <div className="value">{card.value}</div>
           <div className="current-financial"> Current Financial Year</div>
+    
          
         </div>
       ))}
       </div>
       </div>
       <div className="column22">
-        <div className="LineChartcolumn">Line Chart
+        <div className="LineChartcolumn">
+          <div className="user-activity">
+            <span>Overall User Activity</span>
+          <div className="Year-Bar"><span>2021 <FaCaretDown/> </span></div>
+          </div>
+          <LineChart1/>
         </div>
-        <div className="User-table">UserTable</div>
+        <div className="User-table">
+        <div className="Customer-Order"><span>Customer Order</span> <LuRefreshCw/></div>
+          <CustomerOrderTable/>
+        </div>
       </div>
       </div>
   );

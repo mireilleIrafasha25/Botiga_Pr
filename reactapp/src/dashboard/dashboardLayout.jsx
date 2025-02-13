@@ -12,7 +12,7 @@ const {darkMode}=useDarkMode();
             </div>
             <div className="NavandDashboard">
             <div className="NavBarDashboard"><NavBarDashboard />  </div>
-            <div><Outlet /></div>
+            <div className="outset"><Outlet /></div>
             </div> 
         </div>
     );

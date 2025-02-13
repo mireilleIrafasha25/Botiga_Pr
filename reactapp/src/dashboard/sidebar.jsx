@@ -6,6 +6,7 @@ import { MdOutlineSettingsSuggest } from "react-icons/md";
 import { LiaSignOutAltSolid } from "react-icons/lia";
 import "./dashboard-styles/sidebar.css"
 import { useDarkMode } from "./context/DarkModeContext";
+import{Link} from "react-router-dom"
 const SideBar=()=>
 {
     const {darkMode}=useDarkMode();
@@ -17,14 +18,15 @@ const SideBar=()=>
             <span>Business</span>
             </div>  
             <div className="Main-Icon">
-            <div className={`icon ${darkMode?'dark':'light'}`}><MdOutlineAnalytics/><span >Analytics</span></div>
-            <div className={`icon ${darkMode?'dark':'light'}`}><MdOutlineProductionQuantityLimits/><span >Product</span></div>
-            <div className={`icon ${darkMode?'dark':'light'}`}><CgMail/><span>Reports</span></div> 
-            <div className={`icon ${darkMode?'dark':'light'}`}><FiUser/><span>Customers</span></div>
+            <Link to="/dashboard123" style={{textDecoration:"none"}}><div className={`icon ${darkMode?'dark':'light'}`}><MdOutlineAnalytics/><span >Dashboard</span></div></Link>
+           <Link to="/add-product" style={{textDecoration:"none"}}><div className={`icon ${darkMode?'dark':'light'}`}><MdOutlineProductionQuantityLimits/><span >Product</span></div></Link> 
+           <Link to="/report" style={{textDecoration:"none"}}><div className={`icon ${darkMode?'dark':'light'}`}><CgMail/><span>Reports</span></div> </Link>
+           <Link to="/UserDash" style={{textDecoration:"none"}}>  <div className={`icon ${darkMode?'dark':'light'}`}><FiUser/><span>Customers</span></div> </Link>
             
             </div>
             <div className="Main-Icon2">
-             <div className={`icon2 ${darkMode?'dark':'light'}`}><MdOutlineSettingsSuggest/><span>Settings</span></div>
+            <Link to="/setting" style={{textDecoration:"none"}}>
+             <div className={`icon2 ${darkMode?'dark':'light'}`}><MdOutlineSettingsSuggest/><span>Settings</span></div></Link>
             <div className={`icon2 ${darkMode?'dark':'light'}`}><LiaSignOutAltSolid/><span>Sign Out</span></div>
             </div>
             <div className="Main-DivandCarton">

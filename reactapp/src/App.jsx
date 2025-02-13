@@ -22,6 +22,10 @@ import UserList from "./component/userList"
 import AdminDashboardPro from "./dashboard/DashboardView"
 import DashboardLayout from "./dashboard/dashboardLayout"
 import { DarkModeProvider } from "./dashboard/context/DarkModeContext" 
+import  AddProduct from "./dashboard/AddProduct"
+import Report from "./dashboard/Report"
+import ManageUserDash from "./dashboard/UserTable"
+import Settings from "./dashboard/settings"
 function App() {
   
 
@@ -53,6 +57,10 @@ function App() {
         </Route>
         <Route path="/" element={<DashboardLayout/>}>
           <Route path="/dashboard123" index element={<AdminDashboardPro/>} />
+          <Route path="/add-product" element={<AddProduct/>}/>
+          <Route path="/report" element={<Report/>} />
+          <Route path="/UserDash" element={<ManageUserDash/>} />
+          <Route path="/setting" element={<Settings/>} /> 
         </Route>
       </Routes>
     </Router>

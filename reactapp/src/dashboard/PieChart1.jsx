@@ -2,9 +2,9 @@ import React from 'react';
 import { PieChart, Pie, Cell, Legend } from 'recharts';
 
 const data = [
-  { name: 'New', value: 62, color: '#FFB300' },       // Orange
-  { name: 'Returning', value: 26, color: '#FFCC80' }, // Light Orange
-  { name: 'Inactive', value: 12, color: '#FFE0B2' }   // Beige
+  { name: 'New', value: 62, color: '#1E90FF' },       // Orange
+  { name: 'Returning', value: 26, color: '#87CEFA' }, // Light Orange
+  { name: 'Inactive', value: 12, color: '#87CEEB' }   // Beige
 ];
 
 const PieChart1 = () => {
