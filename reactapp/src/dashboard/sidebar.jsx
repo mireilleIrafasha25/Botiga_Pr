@@ -6,10 +6,18 @@ import { MdOutlineSettingsSuggest } from "react-icons/md";
 import { LiaSignOutAltSolid } from "react-icons/lia";
 import "./dashboard-styles/sidebar.css"
 import { useDarkMode } from "./context/DarkModeContext";
-import{Link} from "react-router-dom"
+import{Link,useNavigate} from "react-router-dom"
+import { useAuth } from "../component/AuthProvider";
 const SideBar=()=>
 {
+  const {logout}=useAuth();
     const {darkMode}=useDarkMode();
+const navigate=useNavigate();
+  const handleLogout = () => {
+    console.log("Logout called"); 
+    logout();  // Call the logout function
+    navigate("/");  // Redirect to the home page after logging out
+  };
     return(
        
         <div className={`container ${darkMode?"dark":'light'}`}>
@@ -27,7 +35,7 @@ const SideBar=()=>
             <div className="Main-Icon2">
             <Link to="/setting" style={{textDecoration:"none"}}>
              <div className={`icon2 ${darkMode?'dark':'light'}`}><MdOutlineSettingsSuggest/><span>Settings</span></div></Link>
-            <div className={`icon2 ${darkMode?'dark':'light'}`}><LiaSignOutAltSolid/><span>Sign Out</span></div>
+            <div onClick={handleLogout} className={`icon2 ${darkMode?'dark':'light'}`}><LiaSignOutAltSolid/><span>Sign Out</span></div>
             </div>
             <div className="Main-DivandCarton">
                 <div className={`DivandCarton ${darkMode?'dark':'light'}`}>

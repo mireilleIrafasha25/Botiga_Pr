@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 const AdminDashboard = () => {
-  const [activeContent, setActiveContent] = useState('dashboard'); // Default ni "dashboard"
+  const [activeContent, setActiveContent] = useState('dashboard'); 
 
   const handleActionClick = (action) => {
-    setActiveContent(action); // Bihindura content igaragazwa
+    setActiveContent(action); 
   };
 
   return (

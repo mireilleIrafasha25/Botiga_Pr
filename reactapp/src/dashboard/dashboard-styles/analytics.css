@@ -12,14 +12,17 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .stats-card.dark {
+    background-color: #333;
+    color: white;
   }
   
-  .stats-card h3 {
-    margin: 0;
-    font-size: 18px;
-    color: #343a40;
+  .stats-card.dark p{
+    color:#e9ecef
   }
-  
   .stats-card p {
     font-size: 15px;
     color: #495057;
@@ -58,6 +61,9 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-size: 16px;
+  }
+  .othercolumn.dark{
+background-color: #333;
   }
   .column2{
     display: grid;
@@ -116,6 +122,9 @@
     flex-direction: row;
     gap: 20px;
   }
+  .card-title.dark span{
+color:white;
+  }
   .card-title span{
     color: #343a40;
   }
@@ -140,6 +149,12 @@ gap:20px
   width:80px;
   color:gray;
   margin-top: 3px;
+}
+.Arrow-Number.dark div{
+  color:white;
+}
+.card-title2.dark span{
+color:white;
 }
 .Down-icon{
 color: red;
@@ -179,19 +194,29 @@ color: red;
 .dashboard-container3{
 background-color: white;
 }
+.dashboard-container3.dark{
+  background-color: #333;
+  color: white;
+}
 .stats-card3{
   display: flex;
   flex-direction: column;
-  gap:10px
+  gap:10px;
 }
 .card-title3{
   font-size: 14px;
   color: #333;
 }
+.card-title3.dark{
+  color:white
+}
 .card-number3{
   font-size: 15px;
   color: #495057;
   font-weight: bold;
+}
+.card-number3.dark{
+  color: white;
 }
 .value{
   font-size:15px
@@ -201,6 +226,9 @@ background-color: white;
   color: gray;
   gap: 20px;
 }
+.Arrow-Number3.dark{
+  color: white;
+}
 .Customer-Order{
   display: flex;
   flex-direction: row;
@@ -208,6 +236,18 @@ background-color: white;
   font-size: 12px;
   color: gray;
   margin-bottom: 10px;
+}
+.card-title2.dark{
+  color:white
+}
+.title1.dark{
+  color:white
+}
+.value.dark{
+  color: white;
+}
+.current-financial.dark{
+color: white;
 }
 .Customer-Order span{
   color:gray

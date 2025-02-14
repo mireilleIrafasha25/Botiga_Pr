@@ -30,14 +30,18 @@
   margin-left: 12rem;
   margin-top: 4.5rem;
 }
+.outset.dark{
+  background-color: black;
+  width:900px
+}
 /* .Main-outlet {
     transition: background-color 0.3s ease-in-out;
   } */
   
-  /* .Main-outlet.light {
+  .Main-outlet.light {
     background-color: white;
     color: black;
-  } */
+  } 
   
   .Main-outlet.dark {
     background-color: #121212;
