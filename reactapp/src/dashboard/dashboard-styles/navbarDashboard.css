@@ -11,6 +11,10 @@
 
    
 }
+.Main-NavBar.dark{
+    background-color: #070707;
+    color: white;
+}
 .subdark
 {
     display: flex;

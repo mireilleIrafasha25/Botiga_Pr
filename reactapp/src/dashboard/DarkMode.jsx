@@ -7,7 +7,6 @@ import "./dashboard-styles/DarkToggle.css";
 
 const DarkModeToggle = () => {
   const { darkMode, toggleDarkMode } = useDarkMode();
-
   return (
     <div className={`toggle-container`}>
         <div className="Toggle-Icon">

@@ -26,6 +26,7 @@ import  AddProduct from "./dashboard/AddProduct"
 import Report from "./dashboard/Report"
 import ManageUserDash from "./dashboard/UserTable"
 import Settings from "./dashboard/settings"
+import GetSupportButton from "./dashboard/GetSupportButton"
 function App() {
   
 

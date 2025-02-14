@@ -114,16 +114,16 @@ const Analytics = () => {
       ))}
       </div>
       </div>
-      <div className="column22">
-        <div className="LineChartcolumn">
-          <div className="user-activity">
+      <div className={`column22 ${darkMode?'dark':'light'}`}>
+        <div className={`LineChartcolumn ${darkMode?'dark':'light'}`}>
+          <div className={`user-activity ${darkMode?'dark':'light'}`}>
             <span>Overall User Activity</span>
-          <div className="Year-Bar"><span>2021 <FaCaretDown/> </span></div>
+          <div className={`Year-Bar ${darkMode?'dark':'light'}`}><span>2021 <FaCaretDown/> </span></div>
           </div>
           <LineChart1/>
         </div>
-        <div className="User-table">
-        <div className="Customer-Order"><span>Customer Order</span> <LuRefreshCw/></div>
+        <div className={`User-table  ${darkMode?'dark':'light'}`}>
+        <div className={`Customer-Order  ${darkMode?'dark':'light'}`}><span>Customer Order</span> <LuRefreshCw/></div>
           <CustomerOrderTable/>
         </div>
       </div>

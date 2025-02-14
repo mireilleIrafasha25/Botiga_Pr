@@ -6,7 +6,6 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  Legend
 } from "recharts";
 
 const data = [
@@ -75,5 +74,6 @@ export default function SimpleBarChart() {
       {/* <Legend /> */}
       <Bar dataKey="pv" fill="blue" background={{ fill: "#eee" }} />
     </BarChart>
+    
   );
 }

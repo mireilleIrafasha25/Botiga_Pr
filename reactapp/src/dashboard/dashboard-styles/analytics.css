@@ -82,6 +82,9 @@ background-color: #333;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-size: 16px;
   }
+  .BarChartcolumn.dark{
+background-color: #333;
+  }
   .Bar-top{
     display: flex;
     flex-direction: row;
@@ -91,6 +94,12 @@ background-color: #333;
   .Year-Bar span
   {
     color: gray;
+  }
+  .Year-Bar.dark span{
+    color: white;
+  }
+  .sale.dark{
+    color: white;
   }
   .sale{
     color:gray
@@ -108,6 +117,13 @@ background-color: #333;
     font-size: 16px;
     color:#343a40
   }
+  .LineChartcolumn.dark{
+    background-color: #333;
+    color: white;
+  }
+  .user-activity.dark span{
+    color: white;
+  }
   .User-table{
     background-color: white;
     padding: 20px;
@@ -116,7 +132,15 @@ background-color: #333;
     font-size: 16px;
     color:#343a40
   }
-
+  .User-table.dark{
+    background-color: #333;
+  }
+  .Customer-Order.dark span{
+    color: white;
+  }
+  .Customer-Order.dark{
+    color:white
+  }
   .card-title{
     display: flex;
     flex-direction: row;
