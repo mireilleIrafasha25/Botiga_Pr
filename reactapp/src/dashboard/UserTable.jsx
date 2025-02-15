@@ -49,7 +49,7 @@ const ManageUserDash = () => {
     const fetchUsers = async () => {
       setLoading(true);
       try {
-        const response = await axios.get("http://localhost:5007/Weeding/user/listAll");
+        const response = await axios.get("http://localhost:5000/Botiga/user/listAll");
         setUsers(response.data.getUsers || []);
       } catch (err) {
         console.error("Error fetching users:", err);

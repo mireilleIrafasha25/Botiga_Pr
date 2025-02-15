@@ -19,7 +19,7 @@ const Login = ({ HandleLoginForm }) => {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:5007/Weeding/user/signin", {
+      const response = await axios.post("http://localhost:5000/Botiga/user/signin", {
         email,
         password,
       });
