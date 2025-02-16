@@ -13,16 +13,18 @@ const styles = {
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
   },
   th: {
-    backgroundColor: "#003366", // Dark blue
+    backgroundColor: "#1890ff", // Dark blue
     color: "white",
     padding: "10px",
     border: "1px solid #ddd",
     textAlign: "left",
+    fontSize:"14px",
   },
   td: {
     padding: "10px",
     border: "1px solid #ddd",
     textAlign: "left",
+    fontSize:"12px",
   },
   stripedRow: {
     backgroundColor: "#f0f8ff", // Skyblue
@@ -64,7 +66,7 @@ const ManageUserDash = () => {
 
   return (
     <div style={styles.container}>
-      <h1 style={{ color: "#003366" }}>Manage Users</h1>
+      <h1 style={{ color: "#1890ff" }}>Manage Users</h1>
       {loading && <p>Loading...</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}
       {!loading && !error && users.length > 0 ? (
