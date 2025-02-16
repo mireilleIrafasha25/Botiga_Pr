@@ -1,6 +1,6 @@
 .Whole{
     display: flex;
-    width: 1100px;
+    width: 1143px;
     background-color: blue;
     gap:190px;
     right:0;
@@ -22,8 +22,9 @@
 }
 .Whole .navelement nav ul{
     display: flex;
+    flex-direction: row;
     list-style-type: none;
-     gap:30px;
+     gap:20px;
 }
 
 .Whole .navelement nav ul li a{

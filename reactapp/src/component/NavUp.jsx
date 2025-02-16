@@ -32,7 +32,7 @@ const NavUp=()=>
                 <div className="category">
                 <form action="submit-page.php" method="POST">
                         <select id="options" name="dropdown">
-                            <option value="categories">Categorias</option>
+                            <option value="categories">Category</option>
                             <option value="accessorios">Accesorios</option>
                             <option value="ropa">Ropa</option>
                             <option value="electronics">Electronica</option>

@@ -9,26 +9,26 @@
 }
 .category{
     display: flex;           /* Equivalent to flex */
-    align-items: center;      /* Equivalent to items-center */
+    align-items: center; 
+    justify-content: center;     /* Equivalent to items-center */
     border: 2px solid #D1D5DB; /* Equivalent to border-2 border-gray-300 */
     border-radius: 0.5rem;    /* Equivalent to rounded-lg (8px) */
-    padding: 0.5rem;          /* Equivalent to p-2 (8px) */
+    padding: 0.6rem;          /* Equivalent to p-2 (8px) */
     width: 10rem;
-    height: 16px;
+    height: 28px;
     
 }
 .category form {
-   margin-right: 20px;
-   border: none;
-    outline: none;
-    border-radius: 0.5rem; 
-    padding: 0.5rem;  
+    outline: none; 
+    padding: 0rem;  
     height: 50px;
-    align-items: center; 
 }
 .category form select{
-    border: 1px solid white;
-    margin-top: 18px;
+    border: none;
+    height: auto;
+    margin-top: 5px;
+    border: 1px solid #f8f8f8;
+    background-color:#F8F8F8;
 }
 
 .icon-container {

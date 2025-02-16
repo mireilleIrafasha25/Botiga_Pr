@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './dashboard-styles/Addproduct.css';
+import ProductTable from './productTable';
 
 const AddProduct = () => {
   const [selectedSize, setSelectedSize] = useState('');
@@ -87,6 +88,7 @@ const AddProduct = () => {
       <button type="submit">Add Product</button>
       <button type='reset' style={{background:"white",color:"blue",border:"1px solid blue"}}>Cancel</button>
       </div>
+      <ProductTable/>
     </div>
   );
 };
