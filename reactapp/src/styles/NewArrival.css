@@ -85,7 +85,7 @@ body {
 }
 
 /* Define specific colors */
-.silver {
+.Silver {
   background-color: silver;
 }
 
@@ -93,7 +93,7 @@ body {
   background-color: rgb(203, 94, 15);
 }
 
-.white {
+.White {
   background-color: white;
   border: 1px solid #aaa; /* White needs a border to be visible */
 }
@@ -101,4 +101,11 @@ body {
 .Arsenic {
   background-color: rgb(124, 122, 122);
 }
-  
+  .Main-price span{
+    color: black;
+  }
+  .Main-price{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }

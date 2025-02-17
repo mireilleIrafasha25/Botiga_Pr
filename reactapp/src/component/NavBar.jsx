@@ -37,7 +37,7 @@ const NavBar=()=>
             </ul>
         </nav>
         </div>
-        <div className="phone-icon-container">
+       <div className="phone-icon-container">
      <i className="fa fa-phone phone-icon"></i>
      <span className="phone-number">+1 234 567 8900</span>
         </div>
