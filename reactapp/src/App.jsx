@@ -26,6 +26,8 @@ import  AddProduct from "./dashboard/AddProduct"
 import Report from "./dashboard/Report"
 import ManageUserDash from "./dashboard/UserTable"
 import Settings from "./dashboard/settings"
+import DashTaskLayout from "./DashboardTask2/dashLayout"
+import DashViewTask from "./DashboardTask2/DashViewTask"
 function App() {
   
 
@@ -61,6 +63,9 @@ function App() {
           <Route path="/report" element={<Report/>} />
           <Route path="/UserDash" element={<ManageUserDash/>} />
           <Route path="/setting" element={<Settings/>} /> 
+        </Route>
+        <Route path="/" element={<DashTaskLayout/>}>
+         <Route path="/DashboardTask" index element={<DashViewTask/>} />
         </Route>
       </Routes>
     </Router>
