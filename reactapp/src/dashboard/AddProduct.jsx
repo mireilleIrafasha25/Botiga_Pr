@@ -5,7 +5,11 @@ import ProductTable from './productTable';
 const AddProduct = () => {
   const [selectedSize, setSelectedSize] = useState('');
   const [selectedColor, setSelectedColor] = useState('');
-
+  const [activeContent, setActiveContent] = useState('productAction');
+    const HandleActionClick=(action)=>
+    {
+      setActiveContent(action)
+    }
   const handleSizeClick = (size) => {
     setSelectedSize(size);
   };
@@ -15,7 +19,13 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="add-product">
+    <div >
+      <div className='welcomeCard'>
+        <button onClick={()=>HandleActionClick('productAction')}>NEW PRODUCT</button>
+        <button onClick={()=>HandleActionClick('AllProduct')} > VIEW ALL PRODUCTS</button>
+         </div>
+      {activeContent ==='productAction' &&
+      (    <div className="add-product">
       
       <div className="upload-section">
        <div style={{marginBottom:"10px"}}> <label style={{fontSize:"13px",fontWeight:"bold"}}>Upload Images</label></div>
@@ -88,7 +98,10 @@ const AddProduct = () => {
       <button type="submit">Add Product</button>
       <button type='reset' style={{background:"white",color:"blue",border:"1px solid blue"}}>Cancel</button>
       </div>
-      <ProductTable/>
+      
+    </div>)}
+    {activeContent==='AllProduct' && (<ProductTable/>)}
+    
     </div>
   );
 };

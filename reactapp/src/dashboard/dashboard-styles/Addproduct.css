@@ -137,4 +137,8 @@ background-color: rgb(242, 240, 240);
   button:hover {
     background: #0056b3;
   }
-  
+  .welcomeCard{
+    display: flex;
+    flex-direction: row;
+    gap:50px
+  }
