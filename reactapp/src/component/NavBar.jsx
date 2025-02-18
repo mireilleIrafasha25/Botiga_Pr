@@ -21,19 +21,19 @@ const NavBar=()=>
             <ul>
                 <Link to="/" style={{
                     textDecoration:"none",
-                }}><li><a href="#">Home</a></li></Link>
+                }}><li>Home</li></Link>
                 <Link to="/shop"style={{
                     textDecoration:"none",
-                }}><li><a href="#">Shop</a></li></Link>
+                }}><li>Shop</li></Link>
                 <Link to="/vendor"style={{
                     textDecoration:"none",
-                }}><li><a href="#">Vendors</a></li></Link>
+                }}><li>Vendors</li></Link>
                 <Link to="/blog"style={{
                     textDecoration:"none",
-                }}><li><a href="#">Blog</a></li></Link>
+                }}><li>Blog</li></Link>
                 <Link to="/contact"style={{
                     textDecoration:"none",
-                }}><li><a href="#">Contact</a></li></Link>
+                }}><li>Contact</li></Link>
             </ul>
         </nav>
         </div>

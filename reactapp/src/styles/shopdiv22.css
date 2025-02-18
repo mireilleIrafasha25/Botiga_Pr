@@ -35,3 +35,20 @@ SortingLayout.css */
 .icon.active {
   color: black;
 }
+
+.Category-list{
+  cursor: pointer;
+}
+.Category-list span{
+  color:black
+}
+
+.productHome ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+  padding: 0;
+  padding-bottom: 15px;
+  
+}
