@@ -8,6 +8,7 @@ import { IoMdNotifications } from "react-icons/io";
 import { MdLanguage } from "react-icons/md";
 import { useState } from "react";
 import { MdDarkMode } from "react-icons/md";
+import { IoMenu } from "react-icons/io5";
 const DashNavBar2=()=>
     
 {
@@ -27,12 +28,9 @@ return(
     <div>
         <div className="Main-Navbar2">
             <div className={`NavBarDown2 ${theme}`}>
-             <div className={`AbleVersion ${theme}`}>
-             <h1>Able <sup className="small-text">pro</sup></h1>
-             <h1 className="versionog"><sup className="small-text2">v.1.1.1</sup></h1>
-             </div>
+            <IoMenu size={24} className={`Menu-Icon ${theme}`}/>
              <div className={`SearchDiv2 ${theme}`}>
-               <CiSearch/>
+               <CiSearch className={`search-icon${theme}`}/>
                <input type="text" placeholder="ctrl + K" className="search-input"/>
              </div>
              <div className={`IconDiv2 ${theme}`}>

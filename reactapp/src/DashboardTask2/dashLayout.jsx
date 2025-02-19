@@ -1,17 +1,19 @@
 import DashNavBar2 from "./dashboardnavbar";
 import { Outlet } from "react-router-dom";
 import DashSideBarTask from "./DashSidebarTask";
-import { useDarkMode } from "../dashboard/context/DarkModeContext";
+import { useDarkModeTask } from "./contextTask/darkModeContextTask";
 import "./Dashstyles/dashboard-layout.css"
 const DashTaskLayout=()=>
 {
-    const {darkMode}=useDarkMode();
+    const {theme}=useDarkModeTask();
     return (
-        <div className={`Main-outlet2 ${darkMode?"dark":"light"}`}>
-       <div className={`NavBarDashboard2 ${darkMode?"dark":"light"}`}><DashNavBar2/></div>
-     <div className={`SideBar-Element2 ${darkMode?"dark":"light"}`}><DashSideBarTask/></div>  
-       <div className={`outset2 ${darkMode?"dark":"light"}`}><Outlet />   </div>
-
+        <div className={`Main-outlet2 ${theme}`}>
+       
+     <div className={`SideBar-Element2 ${theme}`}><DashSideBarTask/></div> 
+     <div className="NavBarandDash2">
+     <div className={`NavBarDashboard2 ${theme}`}><DashNavBar2/></div> 
+       <div className={`outset2 ${theme}`}><Outlet />   </div>
+       </div>
            
         </div>
     )
