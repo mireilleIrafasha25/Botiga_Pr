@@ -1,0 +1,13 @@
+.Main-sidebar3{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+.IconDiv3{
+    display: flex;
+    flex-direction: row;
+    gap:5px
+}
+.Main-sidebar3.dark{
+    background-color: #333;
+}

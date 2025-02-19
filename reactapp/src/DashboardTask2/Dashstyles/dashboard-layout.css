@@ -8,15 +8,14 @@
     color: white;
 }
 .SideBar-Element2.dark{
-    background-color: #070707;
+    background-color: #333;
     color: white;
 }
 .SideBar-Element2{
     position: fixed;
-    background-color: black;
-    width:200px;
-    margin-top: 150px;
-    color: white;
+    background-color:none;
+    width:100%;
+    margin-top: 50px;
     z-index: 1000;
 }
 

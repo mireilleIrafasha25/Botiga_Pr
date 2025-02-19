@@ -3,17 +3,7 @@
     flex-direction: column;
     gap:0px;
 }
-.NavBarUp2{
-    background-color: black;
-    color: white;
-    display: flex;
-    flex-direction: row;
-    width:1200px;
-    gap: 800px;
-    align-items: center;
-    height: 50px;
 
-}
 .NavBarDown2{
     background-color:#F8F8F8;
     display: flex;
@@ -25,6 +15,7 @@
 }
 .NavBarDown2.dark{
     background-color: black;
+    width:1200px;
     color: white;
 }
 .LogoDiv{
@@ -170,8 +161,8 @@ margin-left: 20px;
   
   .theme-dropdown {
     position: absolute;
-    top: 90px;
-    right: 280px;
+    top: 30px;
+    right: 250px;
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);

@@ -22,6 +22,7 @@ import UserList from "./component/userList"
 import AdminDashboardPro from "./dashboard/DashboardView"
 import DashboardLayout from "./dashboard/dashboardLayout"
 import { DarkModeProvider } from "./dashboard/context/DarkModeContext" 
+import { DarkModeProviderTask } from "./DashboardTask2/contextTask/darkModeContextTask"
 import  AddProduct from "./dashboard/AddProduct"
 import Report from "./dashboard/Report"
 import ManageUserDash from "./dashboard/UserTable"
@@ -32,6 +33,7 @@ function App() {
   
 
   return (
+    <DarkModeProviderTask>
     <DarkModeProvider>
     <AuthProvider>
     <Router>
@@ -71,6 +73,7 @@ function App() {
     </Router>
     </AuthProvider>
     </DarkModeProvider>
+    </DarkModeProviderTask>
   )
 }
 export default App
