@@ -21,11 +21,11 @@ flex-direction: row;
 .NavBarDashboard2{
     position: fixed;
     background-color:none;
-    margin-left: 220px;
+    margin-left: 20px;
     z-index: 1000;
 }
 .outset2{
-    margin-left: 17rem;
+    margin-left: 2rem;
     margin-top: 5rem;
 }
 .ouset2.dark{
