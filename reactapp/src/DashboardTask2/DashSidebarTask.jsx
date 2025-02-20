@@ -2,9 +2,14 @@ import { useDarkModeTask } from "./contextTask/darkModeContextTask"
 import "./Dashstyles/dashboardSidebar.css"
 import { HiMiniSquare3Stack3D } from "react-icons/hi2";
 import { IoCube } from "react-icons/io5";
+import { LuBotMessageSquare } from "react-icons/lu";
 import { MdOutlineWidgets } from "react-icons/md";
-import { FaAngleDown } from "react-icons/fa6";
+import { FaUser } from "react-icons/fa";
+import { BsFilterCircleFill } from "react-icons/bs";
+import { TbInvoice } from "react-icons/tb";
+import { FaDotCircle } from "react-icons/fa";
 import { HiPresentationChartLine } from "react-icons/hi";
+import { RiDatabaseFill } from "react-icons/ri";
 import { LuChartNoAxesCombined } from "react-icons/lu";
 import { MdFilterList } from "react-icons/md";
 import { FaAngleRight } from "react-icons/fa6";
@@ -34,15 +39,21 @@ const DashSideBarTask=()=>
             <div className={`IconDiv3 ${theme}`}>
                 <span className={`sideWord ${theme}`}>Navigation</span>
                 <div className={`Sub-IconDiv3 ${theme}`}><span><LuChartNoAxesCombined/>Dashboard</span><span><div className={`dashNumber`}>2</div><FaAngleRight size={12} style={{marginTop:"4px"}}/></span></div>
-                <div className={`Sub-IconDiv3 ${theme}`}><span><IoIosCopy/>Layout</span><span style={{marginTop:"4px",marginLeft:"55px"}}><FaAngleRight size={12} /></span></div>
+                <div className={`Sub-IconDiv3 ${theme}`}><span><TbInvoice/>Layout</span><span style={{marginTop:"4px",marginLeft:"55px"}}><FaAngleRight size={12} /></span></div>
             </div>
             <div className={`IconDiv3 ${theme}`}>
                 <span className={`sideWord ${theme}`}>Widget</span>
+                <div className={`Sub-IconDiv3 ${theme}`}><span><FaDotCircle/>Statistics</span></div>
+                <div className={`Sub-IconDiv3 ${theme}`}><span><RiDatabaseFill/>Data</span></div>
+                <div className={`Sub-IconDiv3 ${theme}`}><span><HiPresentationChartLine/>Chart</span></div>
             </div>
             <div className={`IconDiv3 ${theme}`}>
                 
                 <span className={`sideWord ${theme}`}>Admin Panel</span>
-                
+                <div className={`Sub-IconDiv3 ${theme}`}><span><HiMiniSquare3Stack3D/>Online Courses</span><span style={{marginTop:"4px",marginLeft:"0px"}}><FaAngleRight size={12} /></span></div>
+                <div className={`Sub-IconDiv3 ${theme}`}><span><FaUser/>Membership</span><span style={{marginTop:"4px",marginLeft:"20px"}}><FaAngleRight size={12} /></span></div>
+                <div className={`Sub-IconDiv3 ${theme}`}><span><LuBotMessageSquare/>Helpdesk</span><span style={{marginTop:"4px",marginLeft:"40px"}}><FaAngleRight size={12} /></span></div>
+                <div className={`Sub-IconDiv3 ${theme}`}><span><BsFilterCircleFill/>Invoice</span><span style={{marginTop:"4px",marginLeft:"55px"}}><FaAngleRight size={12} /></span></div>
                 </div>
             <div className={`IconDiv3 ${theme}`}>
                 
