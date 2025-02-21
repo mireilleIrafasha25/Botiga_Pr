@@ -37,6 +37,7 @@ const DashSideBarTask=()=>
     const [showDashboard,setshowDashboard]=useState(false)
     const [showCourse,setshowCourse]=useState(false)
     return(
+        <div className="SideElementWhole">
         <div className={`Main-sidebar3 ${theme}`}>
             <div className={`AbleVersion ${theme}`}>
                          <h1>Able <sup className="small-text">pro</sup></h1>
@@ -126,6 +127,7 @@ const DashSideBarTask=()=>
                 </div>
                 </div>
         
+        </div>
         </div>
     )
 }

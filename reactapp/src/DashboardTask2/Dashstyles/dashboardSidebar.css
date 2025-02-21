@@ -1,11 +1,24 @@
 .Main-sidebar3{
     display: flex;
     flex-direction: column;
-    width:200px;
+    width:230px;
     gap: 20px;
     background-color: none;
-    
+    flex-grow: 2;
+    overflow-y: auto;
+    padding-right: 10px;
 }
+.SideElementWhole{
+position: fixed;
+  left: 0;
+  top: 0;
+  width: auto;
+  height: 100vh;
+  background-color: #f8fafc;
+  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}  
 .IconDiv3{
     color: black;
     display: flex;
@@ -60,13 +73,14 @@
 }
 .AbleVersion h1 {
     font-size: 15px;
-    color: #2F80ED; /* Blue color */
+    margin-left: 15px;
+    color: #2F80ED; 
     display: inline-block;
 }
 
 .AbleVersion h1 .small-text {
-    font-size: 12px; /* Smaller font */
-    color: #1E88E5; /* Slightly different blue */
+    font-size: 12px; 
+    color: #1E88E5; 
     vertical-align:super; 
     font-weight: normal;
     
@@ -75,17 +89,17 @@
     display: flex;
     position: fixed;
     z-index: 1000;
-    width:200px;
+    width:220px;
     flex-direction: row;
     margin-left: 0px;
-    background-color: #F8F8F8;
+    background-color: #F8F9FA;
 }
 .AbleVersion.dark{
     background-color: black;
     color: white;
 }
 .versionog{
-background-color: beige;
+background-color: #F8F9FA;
 border-radius:40px ;
 width:50px;
 align-items: center;

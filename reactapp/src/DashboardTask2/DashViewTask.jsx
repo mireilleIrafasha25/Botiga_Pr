@@ -4,49 +4,49 @@ import "./Dashstyles/dashboardviewtask.css" // Twazanye CSS file
 import { useDarkModeTask } from "./contextTask/darkModeContextTask";
 import {BarChart,Bar,ResponsiveContainer,XAxis,YAxis,Tooltip,} from "recharts";
 const data = [
-    {
-      name: "Jan",
-      uv: 4000,
-      pv: 2400,
-      amt: 2400
-    },
-    {
-      name: "Feb",
-      uv: 3000,
-      pv: 1398,
-      amt: 2210
-    },
-    {
-      name: "March",
-      uv: 2000,
-      pv: 9800,
-      amt: 2290
-    },
-    {
-      name: "April",
-      uv: 2780,
-      pv: 3908,
-      amt: 2000
-    },
-    {
-      name: "May",
-      uv: 1890,
-      pv: 4800,
-      amt: 2181
-    },
-    {
-      name: "June",
-      uv: 2390,
-      pv: 3800,
-      amt: 2500
-    },
-    {
-      name: "July",
-      uv: 3490,
-      pv: 4300,
-      amt: 2100
-    }
-  ];
+  {
+    name: "Page A",
+    uv: 4000,
+    pv: 2400,
+    amt: 2400,
+  },
+  {
+    name: "Page B",
+    uv: 3000,
+    pv: 1398,
+    amt: 2210,
+  },
+  {
+    name: "Page C",
+    uv: 2000,
+    pv: 9800,
+    amt: 2290,
+  },
+  {
+    name: "Page D",
+    uv: 2780,
+    pv: 3908,
+    amt: 2000,
+  },
+  {
+    name: "Page E",
+    uv: 1890,
+    pv: 4800,
+    amt: 2181,
+  },
+  {
+    name: "Page F",
+    uv: 2390,
+    pv: 3800,
+    amt: 2500,
+  },
+  {
+    name: "Page G",
+    uv: 3490,
+    pv: 4300,
+    amt: 2100,
+  },
+];
 export default function DashboardViewTask() {
     const {theme} = useDarkModeTask();
     const cardData = [
@@ -70,34 +70,34 @@ export default function DashboardViewTask() {
       const cardData2= [
         {
           id: 1,
-          title: "All Earnings",
-          amount: "$30200",
+          title: "Total Task",
+          amount: "14658",
           percentage: "30.6%",
           icon: "💰",
-          color: "#3b82f6", // Blue for earnings
+          color: "#4AB491", 
         },
         {
           id: 2,
-          title: "Page Views",
-          amount: "290+",
+          title: "Download",
+          amount: "$34045",
           percentage: "30.6%",
           icon: "📄",
-          color: "#f59e0b", // Orange for views
+          color: "#E04545", 
         },
       ];
       
   return (
     <div>
-       <div className="banner">
-      <div className="content">
+       <div className={`banner ${theme}`}>
+      <div className={`content ${theme}`}>
         <h1>Explore Redesigned Able Pro</h1>
         <p>
           The brand new User Interface with the power of Bootstrap Components.
           Explore the endless possibilities with Able Pro.
         </p>
-        <button className="button">Exclusive on Themeforest</button>
+        <button className={`button ${theme}`}>Exclusive on Themeforest</button>
       </div>
-      <div className="rocket">
+      <div className={`rocket ${theme}`}>
         <img src="/rocket.jpg" alt="Rocket"/>
       </div>
 
@@ -145,7 +145,7 @@ export default function DashboardViewTask() {
      </div>
      <div className={`DashTask-card2 ${theme}`}>
      <div className={`cards-container ${theme}`}>
-      {cardData.map((card) => (
+      {cardData2.map((card) => (
         <div key={card.id} className={`card ${theme}`}>
           <div className={`card-header ${theme}`}>
             <span className={`icon ${theme}`} style={{ backgroundColor: `${card.color}20` }}>

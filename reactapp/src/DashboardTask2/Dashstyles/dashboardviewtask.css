@@ -13,6 +13,10 @@
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   }
+  .banner.dark{
+    background:linear-gradient(to right,#222,#000,#232222);
+    color: white;
+  }
   
   /* Text Content */
   .content {
@@ -34,9 +38,9 @@
   }
   
   .button {
-    background: white;
-    color: #2563eb;
-    border: none;
+    background: #2563eb;
+    color: white;
+    border: 1px solid white;
     padding: 12px 20px;
     border-radius: 30px;
     font-size: 1rem;
@@ -45,9 +49,21 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
   }
-  
+  .button.dark{
+    background: #222;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+  }
   .button:hover {
     background: #f3f3f3;
+    color: #2563eb;
   }
   
   /* Rocket Image */
@@ -148,7 +164,7 @@
     border-radius: 8px;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: #F8F9DA;
+    background-color: #F8F9FA;
   }
   .chart.dark{
     background-color: #232222;
