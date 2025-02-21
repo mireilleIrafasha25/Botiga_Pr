@@ -75,7 +75,7 @@
   .Main4card{
     display: flex;
     flex-direction: column;
-    gap:40px
+    gap:10px
   }
   .DashTask-card2{
     background-color:none;
@@ -85,18 +85,20 @@
   .cards-container {
     margin-top: 20px;
     display: flex;
-    gap: 40px;
+    gap: 20px;
 
   }
   
   .card {
     background: white;
-    width: 380px;
+    width: 390px;
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
-  
+  .card.dark{
+    background-color: #333;
+  }
   .card-header {
     display: flex;
     flex-direction: row;
@@ -113,7 +115,9 @@
     font-size: 1.5rem;
   }
   
-  
+  .menu.dark{
+    color: gray;
+  }
   .menu {
     cursor: pointer;
     color:black;
@@ -125,6 +129,9 @@
     margin-left: 10px;
     margin-top: 10px;
     color: #222;
+  }
+  .Cardtitle5.dark{
+    color: white;
   }
   .card-body {
     display: flex;
@@ -141,8 +148,18 @@
     border-radius: 8px;
     padding: 10px;
     margin-bottom: 10px;
+    background-color: #F8F9DA;
   }
-  
+  .chart.dark{
+    background-color: #232222;
+    color: white;
+  }
+  .cardAmount{
+    color: black;
+  }
+  .cardAmount.dark{
+    color: white;
+  }
   .bar {
     width: 8px;
     border-radius: 4px;

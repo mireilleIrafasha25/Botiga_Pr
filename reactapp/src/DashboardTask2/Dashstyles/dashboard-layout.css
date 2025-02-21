@@ -21,7 +21,7 @@ flex-direction: row;
 .NavBarDashboard2{
     position: fixed;
     background-color:none;
-    margin-left: 20px;
+    margin-left: 2px;
     z-index: 1000;
 }
 .outset2{

@@ -67,6 +67,24 @@ export default function DashboardViewTask() {
           color: "#f59e0b", // Orange for views
         },
       ];
+      const cardData2= [
+        {
+          id: 1,
+          title: "All Earnings",
+          amount: "$30200",
+          percentage: "30.6%",
+          icon: "💰",
+          color: "#3b82f6", // Blue for earnings
+        },
+        {
+          id: 2,
+          title: "Page Views",
+          amount: "290+",
+          percentage: "30.6%",
+          icon: "📄",
+          color: "#f59e0b", // Orange for views
+        },
+      ];
       
   return (
     <div>
@@ -84,7 +102,7 @@ export default function DashboardViewTask() {
       </div>
 
       {/* SVG Wave */}
-      <svg className="waves" viewBox="0 0 1440 320">
+      <svg className={`waves ${theme}`} viewBox="0 0 1440 320">
         <path
           fill="rgba(255, 255, 255, 0.1)"
           fillOpacity="1"
@@ -94,27 +112,27 @@ export default function DashboardViewTask() {
     </div>
     <div className={`Main4card ${theme}`}>
      <div className={`DashTask-card2 ${theme}`}>
-     <div className="cards-container">
+     <div className={`cards-container ${theme}`}>
       {cardData.map((card) => (
-        <div key={card.id} className="card">
-          <div className="card-header">
-            <span className="icon" style={{ backgroundColor: `${card.color}20` }}>
+        <div key={card.id} className={`card ${theme}`}>
+          <div className={`card-header ${theme}`}>
+            <span className={`icon ${theme}`} style={{ backgroundColor: `${card.color}20` }}>
               {card.icon}
             </span>
-            <span className="Cardtitle5">{card.title}</span>
-            <span className="menu"><CiMenuKebab/></span>
+            <span className={`Cardtitle5 ${theme}`}>{card.title}</span>
+            <span className={`menu ${theme}`}><CiMenuKebab/></span>
           </div>
-          <div className="card-body">
-            <div className="chart" style={{ backgroundColor:"#F8F9FA" }}>
-              {/* Fake Chart (Bars) */}
+          <div className={`card-body ${theme}`}>
+            <div className={`chart ${theme}`}>
+            
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart width={150} height={40} data={data}>
                  <Bar dataKey="uv" fill={`${card.color}`} />
                  </BarChart>
                </ResponsiveContainer>
-              <div className="info">
-              <span style={{color:'black'}}>{card.amount}</span>
-              <span className="percentage1" style={{ color: card.color }}>
+              <div className={`info ${theme}`}>
+              <span className={`cardAmount ${theme}`}>{card.amount}</span>
+              <span className={`percentage1 ${theme}`} style={{ color: card.color }}>
                 ↑ {card.percentage}
               </span>
             </div>
@@ -125,7 +143,38 @@ export default function DashboardViewTask() {
       ))}
     </div>
      </div>
-     <div className={`DashTask-card2 ${theme}`}>second card2</div>
+     <div className={`DashTask-card2 ${theme}`}>
+     <div className={`cards-container ${theme}`}>
+      {cardData.map((card) => (
+        <div key={card.id} className={`card ${theme}`}>
+          <div className={`card-header ${theme}`}>
+            <span className={`icon ${theme}`} style={{ backgroundColor: `${card.color}20` }}>
+              {card.icon}
+            </span>
+            <span className={`Cardtitle5 ${theme}`}>{card.title}</span>
+            <span className={`menu ${theme}`}><CiMenuKebab/></span>
+          </div>
+          <div className={`card-body ${theme}`}>
+            <div className={`chart ${theme}`} >
+            
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart width={150} height={40} data={data}>
+                 <Bar dataKey="uv" fill={`${card.color}`} />
+                 </BarChart>
+               </ResponsiveContainer>
+              <div className={`info ${theme}`}>
+              <span className={`cardAmount ${theme}`}>{card.amount}</span>
+              <span className={`percentage1 ${theme}`} style={{ color: card.color }}>
+                ↑ {card.percentage}
+              </span>
+            </div>
+            </div>
+            
+          </div>
+        </div>
+      ))}
+    </div>
+     </div>
     </div>
     </div>
   );
