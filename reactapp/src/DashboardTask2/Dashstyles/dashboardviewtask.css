@@ -1,6 +1,6 @@
 .banner {
     position: relative;
-    width: 800px;
+    width: 780px;
     max-width: 900px;
     height: 200px;
     padding: 40px;
@@ -107,7 +107,7 @@
   
   .card {
     background: white;
-    width: 390px;
+    width: 380px;
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
