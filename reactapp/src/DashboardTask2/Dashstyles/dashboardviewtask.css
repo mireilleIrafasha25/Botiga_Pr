@@ -209,12 +209,16 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     padding: 10px;
     flex-direction: column;
-    gap: 10px;
-    height: 250px;
+    gap: 5px;
+    height: 270px;
+    background-color: white;
       }
   .RepeatHead{
     display: flex;
     flex-direction: row;
+  }
+  .repeatword{
+    margin-left: 60px;
   }
   .RepeatHead span{
     color: #333;
@@ -226,7 +230,7 @@
   .percentage3{
     display: flex;
     flex-direction: row;
-    margin-left: 370px;
+    margin-left: 430px;
     gap: 10px;
   }
 
@@ -244,3 +248,56 @@
     margin-top: 5px;
     color: #222;
   }
+
+  .MainProject2{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: 275px;
+    padding-top: 10px;
+    border-radius: 10px;
+    background-color: white;
+}
+.projectHead{
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333;    
+
+}
+.projectHead span{
+  color: #000;
+}
+.Projectpart2
+{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 20px;
+}
+.bluespan{
+  background-color: blue;
+  color: white;
+  width:120px;
+  height: 10px;
+  border-top-left-radius:20px;
+  border-bottom-left-radius:20px;
+}
+.whitespan{
+  background-color:rgb(229, 229, 229);
+  color:white;
+  width:80px;
+  height: 10px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.ColorDiv4{
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+
+
+}

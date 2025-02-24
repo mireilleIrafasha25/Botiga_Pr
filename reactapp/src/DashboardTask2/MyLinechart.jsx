@@ -30,7 +30,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 const MyLineChart = () => {
     return (
-      <div className="chart-container">
+    //   <div className="chart-container">
         <ResponsiveContainer width="100%" height={200}>
           <LineChart data={data}>
             <XAxis dataKey="name" />
@@ -48,7 +48,7 @@ const MyLineChart = () => {
           </LineChart>
         </ResponsiveContainer>
         
-      </div>
+    //   </div>
     );
   };
   

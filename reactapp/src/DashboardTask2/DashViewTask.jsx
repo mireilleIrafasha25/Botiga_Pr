@@ -180,7 +180,7 @@ export default function DashboardViewTask() {
     </div>
     <div className="CustomerAndProject">
       <div className="RepeatCustomer">
-        <div className="RepeatHead"><span>Repeat customer rate</span><span className="iconMenu3"><IoEllipsisHorizontalSharp/></span></div>
+        <div className="RepeatHead"><span className="repeatword">Repeat customer rate</span><span className="iconMenu3"><IoEllipsisHorizontalSharp/></span></div>
         <div className="percentage3">
           <span className="repeatPerc1">5.44%</span>
           <span className="repeatPerc">+2.6%</span>
@@ -188,7 +188,23 @@ export default function DashboardViewTask() {
         <MyLineChart/>
         
       </div>
-      <div>Project completion rate</div>
+      <div className="MainProject2">
+        <div className="projectHead">
+          <span>Project Able</span>
+          <span>Pro</span>
+        
+        </div>
+        
+        <hr />
+        <div className="Projectpart2">
+          <div>Release v.1.2.0 70%</div>
+          <div className="ColorDiv4"><span className="bluespan">.</span><span className="whitespan">.</span></div>
+          <div>
+            jkomjik
+          </div>
+        </div>
+      </div>
+      
     </div>
     </div>
   );
