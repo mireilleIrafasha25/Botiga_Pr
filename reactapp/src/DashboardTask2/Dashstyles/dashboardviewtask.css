@@ -209,9 +209,9 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     padding: 10px;
     flex-direction: column;
-    height: auto;
     gap: 10px;
-  }
+    height: 250px;
+      }
   .RepeatHead{
     display: flex;
     flex-direction: row;
@@ -236,8 +236,11 @@
     border-radius: 5px;
     background-color: #2CA87F;
     color:white;
+    font-weight:600;
+    font-size: 10px;
   }
   .repeatPerc1{
+    font-weight: 700;
     margin-top: 5px;
     color: #222;
   }

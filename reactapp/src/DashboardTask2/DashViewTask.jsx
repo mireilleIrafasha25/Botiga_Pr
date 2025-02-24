@@ -4,6 +4,7 @@ import "./Dashstyles/dashboardviewtask.css" // Twazanye CSS file
 import { useDarkModeTask } from "./contextTask/darkModeContextTask";
 import { IoEllipsisHorizontalSharp } from "react-icons/io5";
 import {BarChart,Bar,ResponsiveContainer,XAxis,YAxis,Tooltip,} from "recharts";
+import MyLineChart from "./MyLinechart";
 const data = [
   {
     name: "Page A",
@@ -184,6 +185,7 @@ export default function DashboardViewTask() {
           <span className="repeatPerc1">5.44%</span>
           <span className="repeatPerc">+2.6%</span>
         </div>
+        <MyLineChart/>
         
       </div>
       <div>Project completion rate</div>
