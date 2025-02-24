@@ -197,4 +197,47 @@
   .percentage1 {
     font-weight: bold;
   }
-  
+  .CustomerAndProject{
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    margin-top: 30px;
+  }
+  .RepeatCustomer{
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 10px;
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+  }
+  .RepeatHead{
+    display: flex;
+    flex-direction: row;
+  }
+  .RepeatHead span{
+    color: #333;
+    margin-right: 10px;
+  }
+  .iconMenu3{
+    margin-left: 280px;
+  }
+  .percentage3{
+    display: flex;
+    flex-direction: row;
+    margin-left: 370px;
+    gap: 10px;
+  }
+
+  .repeatPerc{
+   
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #2CA87F;
+    color:white;
+  }
+  .repeatPerc1{
+    margin-top: 5px;
+    color: #222;
+  }

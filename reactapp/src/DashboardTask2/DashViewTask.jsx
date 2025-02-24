@@ -2,6 +2,7 @@ import React from "react";
 import { CiMenuKebab } from "react-icons/ci";
 import "./Dashstyles/dashboardviewtask.css" // Twazanye CSS file
 import { useDarkModeTask } from "./contextTask/darkModeContextTask";
+import { IoEllipsisHorizontalSharp } from "react-icons/io5";
 import {BarChart,Bar,ResponsiveContainer,XAxis,YAxis,Tooltip,} from "recharts";
 const data = [
   {
@@ -98,7 +99,7 @@ export default function DashboardViewTask() {
         <button className={`button ${theme}`}>Exclusive on Themeforest</button>
       </div>
       <div className={`rocket ${theme}`}>
-        <img src="/rocket.jpg" alt="Rocket"/>
+        <img src="/rocket2.png" alt="Rocket"/>
       </div>
 
       {/* SVG Wave */}
@@ -175,6 +176,17 @@ export default function DashboardViewTask() {
       ))}
     </div>
      </div>
+    </div>
+    <div className="CustomerAndProject">
+      <div className="RepeatCustomer">
+        <div className="RepeatHead"><span>Repeat customer rate</span><span className="iconMenu3"><IoEllipsisHorizontalSharp/></span></div>
+        <div className="percentage3">
+          <span className="repeatPerc1">5.44%</span>
+          <span className="repeatPerc">+2.6%</span>
+        </div>
+        
+      </div>
+      <div>Project completion rate</div>
     </div>
     </div>
   );
