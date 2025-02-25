@@ -3,8 +3,13 @@ import { CiMenuKebab } from "react-icons/ci";
 import "./Dashstyles/dashboardviewtask.css" // Twazanye CSS file
 import { useDarkModeTask } from "./contextTask/darkModeContextTask";
 import { IoEllipsisHorizontalSharp } from "react-icons/io5";
-import {BarChart,Bar,ResponsiveContainer,XAxis,YAxis,Tooltip,} from "recharts";
+import {BarChart,Bar,ResponsiveContainer,XAxis,YAxis,Tooltip,LineChart,Line,Area} from "recharts";
 import MyLineChart from "./MyLinechart";
+import { GoDotFill } from "react-icons/go";
+import { RiAttachment2 } from "react-icons/ri";
+import {Link} from "react-router-dom";
+import { HiOutlineDotsHorizontal } from "react-icons/hi";
+import "./Dashstyles/mylinechart.css"
 const data = [
   {
     name: "Page A",
@@ -49,6 +54,47 @@ const data = [
     amt: 2100,
   },
 ];
+const tasks=[
+  {
+    id:1,
+    name:"Total Tasks",
+    color:"blue",
+    amount:"34,685"
+  },
+  {
+    id:2,
+    name:"Pending Tasks",
+    color:"red",
+    amount:"3405"
+  }
+]
+const dataline = [
+  { name: "Jan", value: 30 },
+  { name: "Feb", value: 55 },
+  { name: "Mar", value: 40 },
+  { name: "Apr", value: 70 },
+  { name: "May", value: 50 },
+  { name: "Jun", value: 85 },
+  { name: "Jul", value: 45 },
+  { name: "Aug", value: 60 },
+  { name: "Sep", value: 50 },
+  { name: "Oct", value: 65 },
+  { name: "Nov", value: 55 },
+  { name: "Dec", value: 70 },
+];
+
+const CustomTooltip = ({ active, payload, label }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="tooltip">
+        <p>{label}</p>
+        <p>🔵 series-1: <strong>{payload[0].value}</strong></p>
+      </div>
+    );
+  }
+  return null;
+};
+
 export default function DashboardViewTask() {
     const {theme} = useDarkModeTask();
     const cardData = [
@@ -106,7 +152,7 @@ export default function DashboardViewTask() {
       {/* SVG Wave */}
       <svg className={`waves ${theme}`} viewBox="0 0 1440 320">
         <path
-          fill="rgba(255, 255, 255, 0.1)"
+          fill="rgba(238, 232, 232, 0.1)"
           fillOpacity="1"
           d="M0,160L80,154.7C160,149,320,139,480,149.3C640,160,800,192,960,213.3C1120,235,1280,245,1360,250.7L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
         ></path>
@@ -178,34 +224,75 @@ export default function DashboardViewTask() {
     </div>
      </div>
     </div>
-    <div className="CustomerAndProject">
-      <div className="RepeatCustomer">
-        <div className="RepeatHead"><span className="repeatword">Repeat customer rate</span><span className="iconMenu3"><IoEllipsisHorizontalSharp/></span></div>
-        <div className="percentage3">
-          <span className="repeatPerc1">5.44%</span>
-          <span className="repeatPerc">+2.6%</span>
+    <div className={`CustomerAndProject ${theme}`}>
+      <div className={`RepeatCustomer ${theme}`}>
+        <div className={`RepeatHead ${theme}`}><span className="repeatword">Repeat customer rate</span><span className="iconMenu3"><IoEllipsisHorizontalSharp/></span></div>
+        <div className={`percentage3 ${theme}`}>
+          <span className={`repeatPerc1 ${theme}`}>5.44%</span>
+          <span className={`repeatPerc ${theme}`}>+2.6%</span>
         </div>
         <MyLineChart/>
         
       </div>
-      <div className="MainProject2">
-        <div className="projectHead">
+      <div className={`MainProject2 ${theme}`}>
+        <div className={`projectHead ${theme}`}>
           <span>Project Able</span>
           <span>Pro</span>
         
         </div>
         
         <hr />
-        <div className="Projectpart2">
-          <div>Release v.1.2.0 70%</div>
-          <div className="ColorDiv4"><span className="bluespan">.</span><span className="whitespan">.</span></div>
-          <div>
-            jkomjik
+        <div className={`Projectpart2 ${theme}`}>
+          <div className={`releaseword ${theme}`}>Release v.1.2.0 70%</div>
+          <div className={`ColorDiv4 ${theme}`}><span className={`bluespan ${theme}`}>.</span><span className={`whitespan ${theme}`}>.</span></div>
+         <Link  to="/dashboardTask" style={{textDecoration:"none"}}> 
+          <div className={`BulletColor ${theme}`}>
+          <div className={`bulletWord ${theme}`}><div><GoDotFill className="doticon"/></div><span>H...</span><span className={`attach ${theme}`}><RiAttachment2 className={`attachicon ${theme}`}/> 2</span></div>
+          <div className={`bulletWord ${theme}`}><div><GoDotFill className="doticon"/></div><span>Invoice...</span></div>
+          <div className={`bulletWord ${theme}`}><div><GoDotFill className="doticon1"/></div><span>Figma A..</span></div>
           </div>
+          </Link>
+          <div className={`AddTaskBtn ${theme}`}><button>+ Add task</button></div>
         </div>
       </div>
       
     </div>
+    <div className={`MainProjectOverview ${theme}`}>
+     <div className={`projectviewog ${theme}`}>
+      <div className={`projectviewHead ${theme}`}><div style={{fontWeight:"bold"}}>Project Overview</div><div><HiOutlineDotsHorizontal/></div></div>
+      <div className={`projectviewcard ${theme}`}>
+       {tasks.map((task)=>
+      {
+        return (
+          <div key={task.id} className={`taskcard ${theme}`}>
+          <div className={`tasktitle ${theme}`}>{task.name}</div>
+          <div className={`taskAmountandline ${theme}`}>
+            <div className={`taskAmount ${theme}`}>{task.amount}</div>
+            <div className={`taskline ${theme}`}>
+              <ResponsiveContainer width="100%" height={50}>
+                        <LineChart data={dataline}>
+                          <Tooltip content={<CustomTooltip />} />
+                          <Area
+                            type="monotone"
+                            dataKey="value"
+                            stroke="transparent"
+                            fill="#99ccff"       
+                            fillOpacity={0.3} 
+                          />
+                          <Line type="monotone" dataKey="value" stroke={`${task.color}`} strokeWidth={1} dot={{ r: 0 }} />
+                        </LineChart>
+                      </ResponsiveContainer>
+            </div>
+          </div>
+         
+          </div>
+        )
+      })}
+      </div>
+      <div ><button className={`addproject ${theme}`}>+ Add Project</button></div>
+      </div> 
+     <div>Able proprofile</div>
+      </div>
     </div>
   );
 }
