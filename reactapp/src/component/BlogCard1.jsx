@@ -1,53 +1,51 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
-const blogData = [
-  {
-    id: 1,
-    image: "/sedmagna.jpg",
-    date: "July 18, 2021",
-    title: "Sed magna dui, dignissim id felis vitae, consectetur",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum porta elit [...]",
-    readmore: "Read more"
-  },
-  {
-    id: 2,
-    image: "/fusce.jpg",
-    date: "July 18, 2021",
-    title: "Fusce suscipit risus tempor, blandit urna at, laoreet ex",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum porta elit [...]",
-    readmore: "Read more"
-  },
-  {
-    id: 3,
-    image: "/pellente.jpg",
-    date: "July 18, 2021",
-    title: "Pellentesque varius, diam vitae mattis luctus, mi mi cursus",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum porta elit [...]",
-    readmore: "Read more"
-  }
-];
+import axios from "axios";
 
 const BlogCard1 = () => {
-  return (
-    <div className="blog-list">
-      {blogData.map((blog) => (
-        <div key={blog.id} className="blog-card">
-          <Link to={`/blog/${blog.id}`}>
-            <img src={blog.image} alt="blog" />
-          </Link>
-          <div className="blog-content">
-            <p className="date">{blog.date}</p>
-            <h3>{blog.title}</h3>
-            <p className="description">{blog.description}</p>
-            <div style={{ marginTop: "30px" }}>
-              <Link to={`/blog/${blog.id}`} className="readmore" style={{ color: "black", fontSize: "15px" }}>
-                {blog.readmore}
-              </Link>
-            </div>
+  const [blogs, setBlogs] = useState([]);
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/Botiga/blog/getblog");
+        console.log("Fetched Blogs:", response.data); 
+        setBlogs(response.data.blogs || []); // Ensure it's an array
+        setMessage(response.data.message || "");
+      } catch (error) {
+        setMessage(error.response?.data?.message || "Failed to fetch blogs");
+        console.error("Error fetching blogs:", error);
+        setBlogs([]); // Ensure blogs is always an array
+      }
+    };
+    fetchBlogs();
+  }, []);
+
+  const renderBlogs = () => {
+    return blogs.map((blog) => (
+      <div key={blog.blogId} className="blog-card">
+        <div onClick={() => window.location.href = `/blog/${blog.blogId}`} style={{ cursor: "pointer" }}>
+          <img src={blog.image.url} alt="blog" />
+        </div>
+        <div className="blog-content">
+          <p className="date">{blog.date}</p>
+          <h3>{blog.title}</h3>
+          <p className="description">{blog.description}</p>
+          <div style={{ marginTop: "30px" }}>
+            <Link to={`/blog/${blog.blogId}`} className="readmore" style={{ color: "black", fontSize: "15px" }}>
+              ReadMore
+            </Link>
           </div>
         </div>
-      ))}
+      </div>
+    ));
+  };
+
+  return (
+    <div>
+      {message && <div className="message">{message}</div>}
+      <div className="blog-list">{renderBlogs()}</div>
     </div>
   );
 };
