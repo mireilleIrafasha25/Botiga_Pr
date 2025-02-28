@@ -12,8 +12,6 @@ return (
             <Homediv1/>
             <Homediv2/>
             <NewArrival/>
-            {/* <VendorHomediv1/>
-            <VendorHomediv2/> */}
         </div>
     );
 }

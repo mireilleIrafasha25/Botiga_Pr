@@ -13,15 +13,15 @@ const Homediv2 = () => {
     ];
 
     return (
-        <div className="home">
-            <h1 className="home-title">Popular Categories</h1>
-            <div className="card-container">
+        <div className="home1">
+            <h1 className="home-title1">Popular Categories</h1>
+            <div className="card-container1">
                 {categories.map((category) => (
-                    <div key={category.id} className="card">
+                    <div key={category.id} className="card1">
                         <Link to="">
-                            <img src={category.image} alt={category.title} className="card-image" />
+                            <img src={category.image} alt={category.title} className="card-image1" />
                         </Link>
-                      <div>  <p className="card-title">{category.title}</p></div>
+                      <div>  <p className="card-title1">{category.title}</p></div>
                     </div>
                 ))}
             </div>

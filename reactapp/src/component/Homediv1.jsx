@@ -10,10 +10,10 @@ const Homediv1=()=>
             <div className="productHome">
                 <ul style={{
                     listStyleType: 'none',
-                    padding: '0',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    flexWrap: 'wrap'
+                    padding: "10px",
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap:"5px"
                 }}>
                     <Link to="/" style={{
                         textDecoration:"none",
@@ -51,15 +51,17 @@ const Homediv1=()=>
             </div>
             
             <div className="explore" style={{
-                width:"200px"
+                width:"330px"
             }}>
-                <h2>Explore our latest and greatest electronics</h2>
+                <h2 style={{fontSize:"1.5rem",marginBottom:"15px",color:"#333",cursor:"pointer",fontFamily:"Lucida Console"}}>Explore our latest and greatest electronics</h2>
                 <Link to="/shop"><button style={{
                     backgroundColor: "#69727d",
                     color: "white",
                     padding: "10px 20px",
                     borderRadius: "5px",
                     fontWeight: "bold",
+                    marginLeft:"20px",
+                    marginTop:"20px",
                     border:"1px solid #69727d"
                 }}>SHOP NOW</button></Link>
             </div>

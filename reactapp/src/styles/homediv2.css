@@ -1,11 +1,11 @@
 /* Home Page */
-.home {
+.home1 {
     /* text-align: center; */
     padding: 0px;
     background-color: white;
 }
 
-.home-title {
+.home-title1 {
     font-size: 2rem;
     color: #333;
     margin-bottom: 20px;
@@ -13,7 +13,7 @@
 }
 
 /* Category Cards */
-.card-container {
+.card-container1 {
     display: flex;
     /* justify-content: space-between; Distributes cards evenly */
     /* align-items: center; */
@@ -26,7 +26,7 @@
     margin: 0px;;
 }
 
-.card {
+.card1{
     background: white;
     /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
     width: 180px; /* Set fixed width for consistency */
@@ -40,12 +40,12 @@
     transform: scale(1.05);
 }  */
 
-.card a {
+.card1 a {
     display: block;
     text-decoration: none;
 }
 
-.card-image {
+.card-image1 {
     width: 50%;
     height: 100px;
     object-fit: contain; /* Ensures the full image is shown */

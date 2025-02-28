@@ -38,10 +38,11 @@
     /* text-align: center; */
   }
   
-  .explore h2 {
+  .explore-word{
     font-size: 1.4rem;
     margin-bottom: 15px;
-    color: #333;
+    color: red;
+    cursor: pointer;
   }
   
   .explore button {
