@@ -14,7 +14,7 @@ font-size: 28px;
     scrollbar-width: none; /* Hides scrollbar for a cleaner look */
 }
 
-.card1 {
+.card14 {
     background: white;
     /* border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
@@ -75,4 +75,40 @@ font-size: 28px;
     cursor: pointer;
     margin-left: 450px;
     margin-top: 20px;
+}
+.explore-product9{
+    display: flex;
+    font-size:25px;
+    font-weight: bold;
+    padding: 20px;
+}
+.Main-ExploreProduct{
+    width: 100%;
+    margin: auto;
+    padding: 20px 20px;
+}
+.productButton12{
+    background: #69727D;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    width: 190px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 450px;
+    margin-top: 20px;
+}
+.inst-card{
+    background-color: red;
+}
+.Card-ImageInst{
+    background-color:none;
+    display: flex;
+    flex-direction: row;
+    gap:5px
+}
+.card-image15{
+    width: 100px;
+    height: 100px; /* Ensures uniform height */
+    object-fit: cover; /* Prevents image distortion */
 }
