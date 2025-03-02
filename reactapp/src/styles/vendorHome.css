@@ -1,41 +1,78 @@
-.Main-Vendor1{
-    display: flex;
-    flex-direction: column;
-    gap:0px
-}
-.card-store1{
-    background-color: none;
-    display: flex;
-    flex-direction: row;
-    gap:0px,
-}
-.card1{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding-right: 30px;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    background:none;
-    
-}
-.card-image12{
+.Main-Vendor1 {
     width: 100%;
-    height: 180px;
+    margin: auto;
+    padding: 20px 0;
 }
-.vendorname23{
+.Main-Vendor1 h4{
+    margin-left: 20px;
+font-size: 28px;
+}
+.card-store1 {
     display: flex;
-    flex-direction: row;
-    gap:10px
+    gap: 20px;
+    overflow-x: auto; /* Allows horizontal scrolling */
+    scrollbar-width: none; /* Hides scrollbar for a cleaner look */
 }
-.rightIcon2{
-    color: gray;
-    size: 12px;
-    background-color: white;
+
+.card1 {
+    background: white;
+    /* border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
+    overflow: hidden;
+    width: 345px;
+    margin-left: 20px;
+    flex-shrink: 0; 
+}
+
+.card-image12 {
+    width: 100%;
+    height: 200px; /* Ensures uniform height */
+    object-fit: cover; /* Prevents image distortion */
+}
+
+.vendorname23 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.rightIcon2 {
+    background: #69727D;
+    padding: 8px;
     border-radius: 50%;
-    width:30px;
-    height: 30px;
-    padding-top: 15px;
+}
+
+.rightIcon2 .iconog54 {
+    font-size: 18px;
+    color: white;
+}
+
+
+.vendor-location{
+    display: flex;
+    font-size: 16px;  
+    margin-top: 0;
+    padding-bottom: 20px;
+    padding-left: 15px;
+}
+.card-store12{
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Allows horizontal scrolling */
+    scrollbar-width: none; 
+    margin-top: 10px;
+}
+.vendorButton{
+    background: #69727D;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    width: 160px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 450px;
+    margin-top: 20px;
 }
