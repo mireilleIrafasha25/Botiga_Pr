@@ -14,7 +14,7 @@ const ContactForm = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response=await axios.post("http://localhost:5000/Botiga/contact/add",
+      const response=await axios.post("https://botiga-backend.onrender.com/Botiga/contact/add",
        { 
         email,
         name,

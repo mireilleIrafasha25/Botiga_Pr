@@ -10,7 +10,7 @@ const ShopCard1 = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/Botiga/product/getProducts");
+        const response = await axios.get("https://botiga-backend.onrender.com/Botiga/product/getProducts");
         setProducts(response.data.products);
         setMessage(response.data.message || "");
       } catch (error) {

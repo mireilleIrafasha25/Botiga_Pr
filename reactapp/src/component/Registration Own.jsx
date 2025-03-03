@@ -28,7 +28,7 @@ const HandleLoginForm=()=>
         e.preventDefault();
         setLoading(true);
         try {
-            const response = await axios.post("http://localhost:5000/Botiga/user/signup", {
+            const response = await axios.post("https://botiga-backend.onrender.com/Botiga/user/signup", {
                 Firstname,
                 Lastname,
                 email,

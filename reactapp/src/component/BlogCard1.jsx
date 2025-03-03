@@ -9,7 +9,7 @@ const BlogCard1 = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/Botiga/blog/getblog");
+        const response = await axios.get("https://botiga-backend.onrender.com/Botiga/blog/getblog");
         console.log("Fetched Blogs:", response.data); 
         setBlogs(response.data.blogs || []); // Ensure it's an array
         setMessage(response.data.message || "");
