@@ -97,6 +97,11 @@ font-size: 28px;
     cursor: pointer;
     margin-left: 450px;
     margin-top: 20px;
+    font-family: "Sen - 400";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 15px;
+    font-size: 15px;
 }
 .inst-card{
     background-color: red;
@@ -105,10 +110,25 @@ font-size: 28px;
     background-color:none;
     display: flex;
     flex-direction: row;
-    gap:5px
+    gap:10px;
+    width: 175px;
 }
 .card-image15{
-    width: 100px;
-    height: 100px; /* Ensures uniform height */
+    width: 100%;
+    height: 200px; /* Ensures uniform height */
     object-fit: cover; /* Prevents image distortion */
+}
+.Instagram{
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+.inst-Content{
+    font-family: "Overlock, display";
+    font-weight: 700;
+    line-height: 38px;
+    font-size: 38px;
+    font-style: normal;
+    color:rgb(33,33,33);
+    padding-bottom: 10px;
+    cursor: pointer;
 }

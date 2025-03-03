@@ -103,13 +103,13 @@ return (
             <ShopCard3/>
             <Link to="/shop" style={{textDecoration:"none"}}><div className="productButton12">VIEW ALL PRODUCTS</div></Link>
         </div>
-        <div>
-            <div>Follow us on @instagram</div>
+        <div className="Instagram">
+            <div className="inst-Content">Follow us on @instagram</div>
             <div className="Card-ImageInst">
-                {Images.map((vendor)=>
+                {Images.map((image1)=>
                 {
                     return(
-                        <img key={vendor.id} src={vendor.image} alt={vendor.name} className="card-image15"/>
+                        <img key={image1.id} src={image1.image} alt={image1.name} className="card-image15"/>
                     )
                 })}
             </div>
