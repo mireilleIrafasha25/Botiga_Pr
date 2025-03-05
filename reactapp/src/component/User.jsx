@@ -1,11 +1,11 @@
 import Login from "./login";
-import Register from "./register";
+// import Register from "./register";
 const User=()=>
 {
     return(
         <div style={{display:"flex"}}>
             <Login />
-            <Register />
+            {/* <Register /> */}
         </div>
     )
  
