@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "../styles/NewArrival.css"; // Import the CSS file
 import { Link } from "react-router-dom";
 import axios from "axios";
-
 const ShopCard1 = () => {
   const [products, setProducts] = useState([]);
   const [message, setMessage] = useState("");
